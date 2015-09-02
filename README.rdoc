@@ -1,28 +1,31 @@
-== README
+# Portfolio
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+By [Mary Dickson](http://www.marydickson.com).
 
-Things you may want to cover:
+## Description
+**Project Portfolio** This is a Rails app designed with BDD to showcase my work as a web developer.
 
-* Ruby version
+### Known Issues
 
-* System dependencies
+If you discover any bugs, feel free to create an issue on GitHub fork and
+send a pull request.
 
-* Configuration
+## Authors
 
-* Database creation
+* Mary Dickson (https://github.com/marythought)
+* Additional Author's name (Their Github URL goes here)
 
-* Database initialization
+## Attribution
+* Readme template from [Stephanie Hekker](http://www.stephaniehekker.com/why-you-should-write-a-readme-for-your-application/)
 
-* How to run the test suite
+## Contributing
 
-* Services (job queues, cache servers, search engines, etc.)
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
 
-* Deployment instructions
+## License
 
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+MIT/X11
