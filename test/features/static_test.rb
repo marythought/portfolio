@@ -1,9 +1,9 @@
 require "test_helper"
 
 feature "Static" do
-  scenario "the test is sound" do
+  scenario "index page returns content" do
     visit root_path
-    page.must_have_content "Hello World"
-    page.wont_have_content "Goobye All!"
+    page.must_have_content "Mary Dickson Diaz"
+    page.wont_have_content "Goodbye All!"
   end
 end
