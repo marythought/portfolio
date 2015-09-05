@@ -47,6 +47,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara_minitest_spec (1.0.5)
+      capybara (>= 2)
+      minitest (>= 4)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -57,6 +60,9 @@ GEM
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.6.0)
+    foundation-rails (5.5.2.1)
+      railties (>= 3.1.0)
+      sass (>= 3.3.0, < 3.5)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -162,7 +168,9 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  capybara_minitest_spec (~> 1.0.5)
   coffee-rails (~> 4.1.0)
+  foundation-rails
   jbuilder (~> 2.0)
   jquery-rails
   minitest-rails

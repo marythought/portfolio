@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Portfolio</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+<div class="row">
+  <div class="small-12 medium-4 large-6 columns namelogo">
+    <h1>Mary Dickson Diaz</h1>
+  </div>
+</div>
+<%= render 'layouts/navbar' %>
+
+<%= yield %>
+
+<%= render "layouts/footer" %>
+<script src="js/foundation/foundation.clearing.js"></script>
+
+</body>
+
+</html>
+
+
