@@ -5,6 +5,9 @@ By [Mary Dickson](http://www.marydickson.com).
 ## Description
 **Project Portfolio** This is a Rails app designed with BDD to showcase my work as a web developer.
 
+## Usage
+Run `rake test` to test.
+
 ### Known Issues
 
 If you discover any bugs, feel free to create an issue on GitHub fork and
@@ -13,7 +16,6 @@ send a pull request.
 ## Authors
 
 * Mary Dickson (https://github.com/marythought)
-* Additional Author's name (Their Github URL goes here)
 
 ## Attribution
 * Readme template from [Stephanie Hekker](http://www.stephaniehekker.com/why-you-should-write-a-readme-for-your-application/)
