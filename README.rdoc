@@ -20,7 +20,8 @@ send a pull request.
 ## Attribution
 * Readme template from [Stephanie Hekker](http://www.stephaniehekker.com/why-you-should-write-a-readme-for-your-application/)
 
-* http://blog.spoongraphics.co.uk/freebies/free-hand-drawn-doodle-icon-set-for-bloggers
+* Contact icons via: (http://blog.spoongraphics.co.uk/freebies/free-hand-drawn-doodle-icon-set-for-bloggers)
+* Template adapted from: (http://foundation.zurb.com/templates/portfolio.html)
 
 ## Contributing
 
