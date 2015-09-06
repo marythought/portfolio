@@ -3,9 +3,10 @@ class WelcomeController < ApplicationController
     @title = "Mary Dickson Diaz - Portfolio"
   end
 
-  def work
+  def portfolio
   end
 
   def about
   end
+
 end

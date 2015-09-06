@@ -13,14 +13,13 @@
   </head>
 
   <body>
-  <div class='namelogo'>
-    <h1>Mary Dickson Diaz</h1>
-  </div>
 
+  <%= render 'layouts/navbar' %>
 
-    <%= yield %>
-    <%= render 'layouts/navbar' %>
-    <%= render "layouts/footer" %>
+  <%= yield %>
+
+  <%= render 'layouts/contact' %>
+  <%= render 'layouts/footer' %>
 
   </body>
 </html>
