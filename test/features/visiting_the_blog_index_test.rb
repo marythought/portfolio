@@ -3,7 +3,7 @@ require "test_helper"
 feature "VisitingTheBlogIndex" do
   scenario "blog index contains blog posts" do
     visit blogs_path
-    page.must_have_content "Listing Blogs"
+    page.must_have_content "Blog Posts"
   end
 
   scenario "visitor can create a new blog post from index" do

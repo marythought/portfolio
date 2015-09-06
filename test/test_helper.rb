@@ -15,8 +15,7 @@ require "minitest/rails/capybara"
 #   register_spec_type(/page$/, self)
 # end
 
-# Uncomment for awesome colorful output
-# require "minitest/pride"
+require "minitest/pride"
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
