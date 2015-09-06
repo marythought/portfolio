@@ -32,7 +32,7 @@ body {
 }
 
 .namelogo {
-  padding:20px 10px 0px 10px;
+  padding:0px 0px 0px 0px;
 }
 
 @media only screen and (min-width: 40.063em) {
@@ -61,13 +61,6 @@ body {
   }
 }
 
-.hero {
-  background:url(http://placehold.it/900x800);
-  background-size:cover;
-  box-shadow:inset 0px 0px 0 2000px rgba(0,0,0,0.15);
-  height:80%;
-}
-
 .intro-text {
   padding-top:40%;
   color:rgba(255,255,255,1);
@@ -91,16 +84,8 @@ body {
   font-size:44px;
 }
 
-.about,.work,.contact {
+.work,.contact {
   padding:50px 0 0 0;
-}
-
-.about img {
-  width:250px;
-  height:250px;
-  border-radius:150px;
-  -webkit-border-radius:150px;
-  -moz-border-radius:150px;
 }
 
 .work img:hover {
