@@ -16,6 +16,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'byebug'
   gem "minitest-rails-capybara"
+  gem 'poltergeist'
 end
 
 group :development do

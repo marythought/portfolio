@@ -8,10 +8,10 @@ feature "VisitingTheBlogIndex" do
 
   scenario "visitor can create a new blog post from index" do
     visit blogs_path
-    click_link('New Blog')
+    click_link('New Blog Post')
     fill_in "Title", with: blogs(:cr).title
     fill_in "Body", with: blogs(:cr).body
-    click_button "Create Blog"
+    click_button('Create Blog')
     page.must_have_content blogs(:cr).title
   end
 
