@@ -1,0 +1,24 @@
+* {
+  font-family: 'Cambay', sans-serif;
+}
+
+#headshot img {
+  border-radius: 50%;
+}
+
+#about-bullets li {
+  padding-bottom: 10px;
+}
+
+#portfolio img {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 20%;
+  max-height: 200px;
+  padding-bottom: 10px;
+}
+
+#portfolio h3 {
+  text-align: center;
+}

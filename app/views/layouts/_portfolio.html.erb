@@ -1,27 +1,30 @@
-<div class="row">
+<div id="portfolio" class="row">
+  <h2>Portfolio</h2>
+  <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
 
-  <div class="large-12 columns">
-    <h4>Portfolio</h4>
-    <p>Click on each image for a link to the relevant project</p>
+    <li>
+      <a href="http://bookmerge.herokuapp.com">
+      <img src="<%= asset_path('bookmerge.png')%>"></a>
+      <h3>Bookmerge!</h3>
+      <p> A Sinatra/Ruby app that mashes your favorite books together to write horrible book children.</p>
+    </li>
 
-    <ul class="clearing-thumbs small-block-grid-1 medium-block-grid-2 large-block-grid-4" data-clearing>
-      <li>
-        <a href="http://bookmerge.herokuapp.com">
-        <img data-caption="Bookmerge! A Sinatra app that mashes your favorites books together to form horrible book children." src="http://placehold.it/800x500&text=[bookmerge]"></a>
-        <p>Bookmerge! A Sinatra app that mashes your favorites books together to form horrible book children.</p>
-      </li>
-      <li>
-        <a href="https://robot-generator.herokuapp.com/"><img data-caption="Robot parts generator -- my first Rails app" src="http://placehold.it/800x500&text=[robots]"></a>
-        <p>Build robots! My first Rails app tracks robot parts.</p>
-      </li>
-      <li>
-        <a href="https://www.twitter.com/bletchleyroll"><img data-caption="caption 3 here..." src="<%= asset_path('bletchley.jpg')%>" width="150"></a>
-        <p>Bletchley Bot tweets mini-bios of women who served at Bletchley Park during WWII, some of the earliest computer programming pioneers.</p>
-      </li>
-      <li>
-        <a href="http://www.marydickson.com"><img data-caption="caption 5 here..." src="http://placehold.it/800x500&text=[me]"></a>
-        <p>I've been blogging since before it was cool, most recently at marydickson.com. I write about code and some other stuff. Mostly other stuff.</p>
-      </li>
-    </ul>
-  </div>
+    <li>
+    <a href="https://robot-generator.herokuapp.com/"><img src="<%= asset_path('pinkrobot.png')%>"></a>
+    <h3>Robots!</h3>
+    <p>My first Rails app tracks robot parts. A crowd pleaser.</p>
+    </li>
+
+    <li>
+    <a href="https://www.twitter.com/bletchleyroll"><img src="<%= asset_path('bletchley.jpg')%>"></a>
+    <h3>Bletchley Bot</h3>
+    <p>This twitter bot tweets mini-bios of women who served at Bletchley Park during WWII, some of the earliest computer programming pioneers.</p>
+    </li>
+
+    <li>
+      <a href="http://www.marydickson.com"><img src="<%= asset_path('dealwithit.jpg')%>"></a>
+      <h3>Wordpress</h3>
+      <p>I've been blogging since before it was cool, most recently at marydickson.com. I write about learning to code and some other stuff.</p>
+    </li>
+  </ul>
 </div>
