@@ -27,7 +27,7 @@ feature "VisitingTheBlogIndex" do
   end
 
   scenario "visitor can delete a blog post" do
-    blog = Blog.create(title: "Becoming a Fode Cellow", body: "Means striving for excellence.")
+    Blog.create(title: "Becoming a Fode Cellow", body: "Means striving.")
     number_of_blogs = Blog.all.count
     visit blogs_path
     page.find("tbody tr:last").click_on "Destroy"
@@ -35,4 +35,3 @@ feature "VisitingTheBlogIndex" do
     assert_equal Blog.all.count, number_of_blogs - 1
   end
 end
-

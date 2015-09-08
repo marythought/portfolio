@@ -11,6 +11,8 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'foundation-rails'
 gem 'capybara_minitest_spec', '~> 1.0.5'
+gem 'minitest-reporters'
+gem 'rubocop'
 
 group :development, :test do
   gem 'sqlite3'
