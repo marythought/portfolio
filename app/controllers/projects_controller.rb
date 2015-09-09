@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :set_project, only: [:show, :edit, :update]
 
   def index
     @projects = Project.all
@@ -21,28 +21,24 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.find(project_params[:id])
   end
 
   def edit
   end
 
   def update
-    respond_to do |format|
-      if @project.update(project_params)
-        format.html { redirect_to @project, notice: 'Project was successfully updated.' }
-        format.json { render :show, status: :ok, location: @project }
-      else
-        format.html { render :edit }
-        format.json { render json: @project.errors, status: :unprocessable_entity }
-      end
+    if @project.update_attributes(project_params)
+      redirect_to @project, notice: 'Project was successfully updated.'
+    else
+      flash[:notice] = "Project could not be updated"
+      render :edit
     end
   end
 
   private
 
   def set_project
-    @blog = Project.find(params[:id])
+    @project = Project.find(params[:id])
   end
 
   def project_params

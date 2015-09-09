@@ -4,8 +4,8 @@ feature "Projects::CreatingAProject" do
   scenario "create a new project" do
     visit projects_path
     click_link('New Project')
-    fill_in 'Name', with: "My title"
-    fill_in "Technologies used", with: "Ruby on Rails"
+    fill_in 'Name', with: projects(:one).name
+    fill_in "Technologies used", with: projects(:one).technologies_used
     click_button('Create Project')
     page.text.must_include "Project has been successfully created"
     assert page.has_css?(".alert-box"), "Expected a flash notice on this page, none found."
