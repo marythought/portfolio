@@ -11,7 +11,7 @@ feature "Authentication::CanLogin" do
 
   scenario "with a valid login" do
     fill_in 'Email', with: users(:cassie).email
-    fill_in 'Email', with: users(:cassie).password
+    fill_in 'Password', with: 'password'
     click_button('Log in')
     page.text.must_include "Signed in successfully."
   end
@@ -21,7 +21,6 @@ feature "Authentication::CanLogin" do
     fill_in 'Password', with: "password"
     click_button('Log in')
     page.text.must_include "Invalid email or password."
-    assert page.has_css?(".alert-box"), "Expected a flash notice on this page, none found."
   end
 
   scenario "with a valid email but not a valid password" do
@@ -29,6 +28,5 @@ feature "Authentication::CanLogin" do
     fill_in 'Password', with: "wrongpassword"
     click_button('Log in')
     page.text.must_include "Invalid email or password."
-    assert page.has_css?(".alert-box"), "Expected a flash notice on this page, none found."
   end
 end

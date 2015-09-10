@@ -4,8 +4,11 @@
 
 cassie:
   email: cassie@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
 
 OC:
   email: OC@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+
 
 
