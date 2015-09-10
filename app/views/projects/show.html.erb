@@ -1,0 +1,22 @@
+<div class="row">
+
+  <div class="large-8 columns">
+
+  <p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @project.name %>
+</p>
+
+<img src="<%= @project.image_url %>">
+
+<p>
+  <strong>Technologies used:</strong>
+  <%= @project.technologies_used %>
+</p>
+
+  <%= link_to 'Edit', edit_project_path(@project) %> |
+  <%= link_to 'Back', projects_path %>
+  </div>
+</div>
