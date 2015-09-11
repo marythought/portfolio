@@ -19,3 +19,11 @@ class ActionController::TestCase
 end
 
 system 'rubocop'
+
+def signin
+  visit root_path
+  click_link('Log in')
+  fill_in 'Email', with: users(:cassie).email
+  fill_in 'Password', with: 'password'
+  click_button('Log in')
+end
