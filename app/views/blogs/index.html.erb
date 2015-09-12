@@ -11,6 +11,7 @@
         <th>Date</th>
         <th>Title</th>
         <th>Body</th>
+        <th>Author</th>
         <th colspan="2"></th>
       </tr>
     </thead>
@@ -21,6 +22,7 @@
           <td><%= link_to blog.created_at.to_date %></td>
           <td><%= link_to blog.title, blog %></td>
           <td><%= blog.body %></td>
+          <td><%= blog.user.name if blog.user.present? %></td>
           <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
           <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
