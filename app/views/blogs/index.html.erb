@@ -12,6 +12,7 @@
         <th>Title</th>
         <th>Body</th>
         <th>Author</th>
+        <th>Published?</th>
         <th colspan="2"></th>
       </tr>
     </thead>
@@ -23,6 +24,7 @@
           <td><%= link_to blog.title, blog %></td>
           <td><%= blog.body %></td>
           <td><%= blog.user.name if blog.user.present? %></td>
+          <td id="status"><%= blog.published? ? "Published" : "Unpublished" %>
           <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
           <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
@@ -30,6 +32,10 @@
     </tbody>
     </table>
     <br>
-    <%= link_to 'New Blog Post', new_blog_path, class: 'button' %>
+    <% if user_signed_in? %>
+      <% if current_user.editor? || current_user.author? %>
+        <%= link_to 'New Blog Post', new_blog_path, class: 'button' %>
+      <% end %>
+    <% end %>
   </div>
 </div>

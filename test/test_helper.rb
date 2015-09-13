@@ -18,12 +18,15 @@ class ActionController::TestCase
   include Devise::TestHelpers
 end
 
-system 'rubocop'
-
-def signin
+def sign_in(role = :editor)
   visit root_path
   click_link('Log in')
-  fill_in 'Email', with: users(:cassie).email
+  fill_in 'Email', with: users(role).email
   fill_in 'Password', with: 'password'
   click_button('Log in')
 end
+
+#to generate a new test:
+#rails generate minitest:feature articles/CreatingArticles --spec
+
+system 'rubocop'

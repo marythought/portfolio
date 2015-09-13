@@ -19,6 +19,12 @@
   <%= @blog.body %>
 </p>
 
+<p>
+  <strong>
+  <%= @blog.published? ? "Status: Published" : "Status: Unpublished" %>
+  </strong>
+</p>
+
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
 <%= link_to 'Back', blogs_path %>
 </div>

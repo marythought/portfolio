@@ -6,6 +6,7 @@ feature "Projects::CreatingAProject" do
     click_link('New Project')
     fill_in 'Name', with: projects(:one).name
     fill_in "Technologies used", with: projects(:one).technologies_used
+    fill_in "Image url", with: projects(:one).image_url
     click_button('Create Project')
     page.text.must_include "Project has been successfully created"
     assert page.has_css?(".alert-box"), "Expected a flash notice on this page, none found."
@@ -17,6 +18,7 @@ feature "Projects::CreatingAProject" do
     click_link('New Project')
     fill_in 'Name', with: ""
     fill_in 'Technologies used', with: ""
+    fill_in 'Image url', with: ""
     click_button('Create Project')
     page.text.must_include "Project could not be saved"
     page.text.must_include "Name can't be blank"

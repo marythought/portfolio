@@ -6,11 +6,31 @@ cassie:
   email: cassie@example.com
   name: Cassie Cat
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  role: editor
 
 OC:
   email: OC@example.com
   name: Other Cat
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  role: author
+
+Mary:
+  email: mary@example.com
+  name: Mary Dickson
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  role: user
+
+editor:
+  email: editor@example.com
+  name: Ms. Editor
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  role: editor
+
+author:
+  email: author@example.com
+  name: Ann Author
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  role: author
 
 
 
