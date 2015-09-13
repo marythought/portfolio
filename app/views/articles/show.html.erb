@@ -6,26 +6,26 @@
 
 <p>
   <strong>Title:</strong>
-  <%= @blog.title %>
+  <%= @article.title %>
 </p>
 
 <p id="author">
   <strong>Author:</strong>
-  <%= @blog.user.name %>
+  <%= @article.user.name %>
 </p>
 
 <p>
   <strong>Body:</strong>
-  <%= @blog.body %>
+  <%= @article.body %>
 </p>
 
 <p>
   <strong>
-  <%= @blog.published? ? "Status: Published" : "Status: Unpublished" %>
+  <%= @article.published? ? "Status: Published" : "Status: Unpublished" %>
   </strong>
 </p>
 
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', blogs_path %>
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
 </div>
 </div>
