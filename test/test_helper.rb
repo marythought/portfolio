@@ -26,7 +26,7 @@ def sign_in(role = :editor)
   click_button('Log in')
 end
 
-#to generate a new test:
-#rails generate minitest:feature articles/CreatingArticles --spec
+# to generate a new test:
+# rails generate minitest:feature articles/CreatingArticles --spec
 
 system 'rubocop'

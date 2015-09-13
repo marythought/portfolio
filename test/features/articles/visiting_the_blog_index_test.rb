@@ -1,7 +1,6 @@
 require "test_helper"
 
 feature "VisitingTheBlogIndex" do
-
   scenario "blog index contains blog posts" do
     visit blogs_path
     page.must_have_content "Blog Posts"

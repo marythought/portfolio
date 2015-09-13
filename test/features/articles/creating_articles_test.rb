@@ -1,7 +1,6 @@
 require "test_helper"
 
 feature "Articles::CreatingArticles" do
-
   scenario "user can create a new blog post from index" do
     sign_in(:author)
     page.text.must_include "Signed in successfully."
