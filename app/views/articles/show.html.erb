@@ -9,6 +9,10 @@
       <%= @article.title %>
     </p>
 
+    <p id="image">
+      <img src='<%= @article.image_url %>'>
+    </p>
+
     <p id="author">
       <strong>Author:</strong>
       <%= @article.user.name %>
