@@ -9,7 +9,7 @@
   </thead>
 
   <tbody id="blog_listing">
-    <% @articles_public.each do |article| %>
+    <% @articles.each do |article| %>
       <tr>
         <td><%= link_to article.created_at.to_date %></td>
         <td><%= link_to article.title, article %></td>

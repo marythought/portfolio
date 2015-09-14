@@ -11,16 +11,14 @@
 </thead>
 
 <tbody id="blog_listing">
-  <% @articles_by_author.each do |article| %>
+  <% @articles.each do |article| %>
     <tr>
       <td><%= link_to article.created_at.to_date %></td>
       <td><%= link_to article.title, article %></td>
       <td><%= article.body %></td>
       <td><%= article.user.name if article.user.present? %></td>
-      <% if policy(article).update? %>
-        <td id="status"><%= article.published? ? "Published" : "Unpublished" %>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <% end %>
+      <td id="status"><%= article.published? ? "Published" : "Unpublished" %>
+      <td><%= link_to 'Edit', edit_article_path(article) %></td>
     </tr>
   <% end %>
 </tbody>

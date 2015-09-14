@@ -12,4 +12,22 @@ class User < ActiveRecord::Base
   def author?
     role == "author"
   end
+
+  def visitor?
+    role.nil?
+  end
+end
+
+class NullUser
+  def editor?
+    false
+  end
+
+  def author?
+    false
+  end
+
+  def visitor?
+    true
+  end
 end
