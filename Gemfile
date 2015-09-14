@@ -14,6 +14,7 @@ gem 'capybara_minitest_spec', '~> 1.0.5'
 gem 'minitest-reporters'
 gem 'rubocop'
 gem 'devise'
+gem 'pundit'
 
 group :development, :test do
   gem 'sqlite3'

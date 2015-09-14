@@ -1,0 +1,21 @@
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Author</th>
+    </tr>
+  </thead>
+
+  <tbody id="blog_listing">
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= link_to article.created_at.to_date %></td>
+        <td><%= link_to article.title, article %></td>
+        <td><%= article.body %></td>
+        <td><%= article.user.name if article.user.present? %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

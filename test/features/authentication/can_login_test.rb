@@ -1,9 +1,6 @@
 require "test_helper"
 
-# before do -- set up a valid user
-
 feature "Authentication::CanLogin" do
-
   before :each do
     visit root_path
     click_link('Log in')

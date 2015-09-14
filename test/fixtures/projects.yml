@@ -1,7 +1,9 @@
 one:
   name: Webpage
   technologies_used: HTML and CSS
+  image_url: https://upload.wikimedia.org/wikipedia/commons/1/1e/Large_Siamese_cat_tosses_a_mouse.jpg
 
 two:
   name: Twitterbot
   technologies_used: Ruby on Rails
+  image_url: https://upload.wikimedia.org/wikipedia/commons/1/1e/Large_Siamese_cat_tosses_a_mouse.jpg
