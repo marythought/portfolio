@@ -11,4 +11,4 @@ unpublished:
   title: Intro to HTTP
   body: It's all about the request-response cycle!
   user: OC
-  published: false
+  published: true

@@ -1,12 +1,17 @@
-class ArticlePolicy
-  attr_accessor :user, :article
-
-  def initialize(user, article)
-    @user = user
-    @article = article
+class ArticlePolicy < ApplicationPolicy
+  def publish?
+    @user.editor?
   end
 
-  def publish?
-    @user.role == "editor"
+  def create?
+    @user.editor? || @user.author?
+  end
+
+  def destroy?
+    @user.editor?
+  end
+
+  def update?
+    @user.editor? || @user.author?
   end
 end

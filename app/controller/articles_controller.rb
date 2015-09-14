@@ -4,6 +4,8 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
+    @articles_public = Article.where(published: true)
+    @articles_by_author = Article.where(user: current_user)
   end
 
   def show
