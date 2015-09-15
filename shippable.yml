@@ -1,8 +1,0 @@
-#language setting
-language: ruby
-
-#version number(s)
-ruby:
-  - 2.2.3
-
-
