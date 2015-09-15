@@ -15,6 +15,10 @@ gem 'minitest-reporters'
 gem 'rubocop'
 gem 'devise'
 gem 'pundit'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-github'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'sqlite3'
