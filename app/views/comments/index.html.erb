@@ -1,0 +1,10 @@
+<% @article.comments.each do |comment| %>
+  <p>Comment by: <%= comment.user %></p>
+  <p>Posted at: <%= comment.created_at %></p>
+  <p><%= comment.content %></p>
+  <% if user_signed_in? && policy(comment).update? %>
+    <%= comment.published? ? "Status: Published" : "Pending Approval" %>
+    <%= link_to "Edit", edit_article_comment_path(@article, comment) %>
+    <%= link_to "Destroy", @comment, method: :delete, data: { confirm: 'Are you sure?' } if policy(comment).destroy? %>
+  <% end %>
+<% end %>

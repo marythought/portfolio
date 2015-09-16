@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="large-8 columns">
+    <%= form_for([@article, @comment]) do |f| %>
+      <% if @comment.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@article.comment.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+          <ul>
+          <% @article.comment.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field">
+        <%= f.label :content %><br>
+        <%= f.text_field :content %>
+      </div>
+
+      <% if policy(@comment).publish? %>
+        <div class="row collapse">
+          <div class="small-3 columns">
+            <%= f.label :published, class: "right inline", title: "Is this comment published?", data: {tooltip: true } %>
+          </div>
+          <div class="small-9 columns">
+            <%= f.check_box :published %>
+          </div>
+        </div>
+      <% end %>
+
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
+  </div>
+</div>

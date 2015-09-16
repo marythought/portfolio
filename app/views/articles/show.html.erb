@@ -21,15 +21,32 @@
       <%= @article.body %>
     </p>
 
-    <% if user_signed_in? %>
-      <% if policy(@article).update? %>
-        <p>
-        <%= @article.published? ? "Status: Published" : "Status: Unpublished" %>
-        </p>
-        <%= link_to 'Edit', edit_article_path(@article) %>
-      <% end %>
+    <% if user_signed_in? && policy(@article).update?%>
+      <p>
+      <%= @article.published? ? "Status: Published" : "Status: Unpublished" %>
+      </p>
+      <%= link_to 'Edit', edit_article_path(@article) %>
       <%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } if policy(@article).destroy? %>
     <% end %>
+
+    <h3>NOW HERE BE COMMENTS</h3>
+    <p>#################################</p>
+
+    <% @article.comments.each do |comment| %>
+      <% if comment.published %>
+        <p>Comment by: <%= comment.user %></p>
+        <p>Posted at: <%= comment.created_at %></p>
+        <p><%= comment.content %></p>
+      <% end %>
+    <% end %>
+
+    <% if policy(@article.comments).update? %>
+    <%= link_to "Editors, edit or approve comments", article_comments_path(@article) %>
+    <% end %>
+
+    <h3>ADD A NEW COMMENT, BUT DON'T BE A JERK</h3>
+    <p>#################################</p>
+    <%= link_to 'New comment', new_article_comment_path(@article) %>
 
     <%= link_to 'Back', articles_path %>
   </div>
