@@ -52,10 +52,4 @@ feature "Articles::CreatingArticles" do
     click_on "Create Article"
     page.text.must_include "Status: Published"
   end
-
-  scenario "authors should see a 'not authorized' message if they try to publish" do
-    skip # role gets added by the create method and the update method
-    sign_in(:author)
-    page.must_have_content "not authorized"
-  end
 end
