@@ -8,7 +8,7 @@ class CommentPolicy < ApplicationPolicy
   end
 
   def update?
-    @user.editor?
+    @user.editor? || @record.user == user
   end
 
   # ArticlePolicy::Scope.new

@@ -1,7 +1,11 @@
 source 'https://rubygems.org'
 
+gem 'capybara_minitest_spec', '~> 1.0.5'
 gem 'coffee-rails', '~> 4.1.0'
+gem 'devise'
+gem 'dotenv-rails'
 gem 'eefgilm'
+gem 'foundation-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'minitest-rails'
@@ -10,16 +14,12 @@ gem 'sass-rails', '~> 5.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
-gem 'foundation-rails'
-gem 'capybara_minitest_spec', '~> 1.0.5'
 gem 'minitest-reporters'
 gem 'rubocop'
-gem 'devise'
 gem 'pundit'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-github'
-gem 'dotenv-rails'
 
 group :development, :test do
   gem 'sqlite3'
