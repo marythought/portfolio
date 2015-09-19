@@ -14,7 +14,7 @@
       <tr>
         <td><%= link_to article.created_at.to_date %></td>
         <td><%= link_to article.title, article %></td>
-        <td><%= article.body %></td>
+        <td><%= shorten(article.body) %>...</td>
         <td><%= article.user.name if article.user.present? %></td>
         <td id="status"><%= article.published? ? "Published" : "Unpublished" %>
         <td><%= link_to 'Edit', edit_article_path(article) %></td>

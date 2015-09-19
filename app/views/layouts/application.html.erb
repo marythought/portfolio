@@ -6,12 +6,16 @@
 
   <body>
 
+<div class="row">
+  <div class="large-12 columns">
   <%= render 'layouts/navbar' %>
   <% flash.each do |key, value| %>
     <div class="alert-box round <%= flash_class(key) %>">
       <%= value %>
     </div>
   <% end %>
+</div>
+</div>
 
   <%= yield %>
 

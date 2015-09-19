@@ -1,21 +1,17 @@
-<table>
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Title</th>
-      <th>Body</th>
-      <th>Author</th>
-    </tr>
-  </thead>
-
-  <tbody id="blog_listing">
+<div id="article_cards" class="row">
+  <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
     <% @articles.each do |article| %>
-      <tr>
-        <td><%= link_to article.created_at.to_date %></td>
-        <td><%= link_to article.title, article %></td>
-        <td><%= article.body %></td>
-        <td><%= article.user.name if article.user.present? %></td>
-      </tr>
+      <li>
+        <img src="<%= article.image_url %>">
+        <h4 class-title><%= article.title %></h4>
+        <p class="post-author">By <%= article.user.name %> on <%= article.created_at.to_date %></p>
+        <p><%= shorten(article.body) %>...</p>
+        <%= link_to "read on", article %>
+      </li>
     <% end %>
-  </tbody>
-</table>
+  </ul>
+</div>
+
+
+
+
