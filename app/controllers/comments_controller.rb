@@ -11,10 +11,10 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @article.comments.new(comment_params)
-    current_user ? @comment.user = current_user.name : @comment.user = "Anonymous User"
+    set_comment_author(@comment)
     if @comment.save
       flash[:success] = 'Comment added, pending admin approval'
-      redirect_to article_path(@article)
+      redirect_to @article
     else
       flash[:error] = "Comment could not be saved"
       render :new
@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
 
   def url_options
     { article_id: params[:article_id] }.merge(super)
-    # this is hacking into the url_options which is in application_controller
+    # this is overwriting the url_options which is in application_controller
   end
 
   def update
@@ -47,6 +47,15 @@ class CommentsController < ApplicationController
   end
 
   private
+
+  def set_comment_author(comment)
+    if current_user
+      @comment.username = current_user.name
+      @comment.user = current_user
+    else
+      @comment.username = "Anonymous"
+    end
+  end
 
   def find_article
     @article = Article.find(params[:article_id])
