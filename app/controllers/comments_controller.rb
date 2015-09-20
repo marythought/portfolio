@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @article.comments.new(comment_params)
-    set_comment_author(@comment)
+    write_comment_author
     if @comment.save
       flash[:success] = 'Comment added, pending admin approval'
       redirect_to @article
@@ -48,7 +48,7 @@ class CommentsController < ApplicationController
 
   private
 
-  def set_comment_author(comment)
+  def write_comment_author
     if current_user
       @comment.username = current_user.name
       @comment.user = current_user

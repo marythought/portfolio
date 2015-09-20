@@ -3,11 +3,10 @@ require "test_helper"
 feature "OAuth::LoggingIn" do
   scenario "sign in with twitter works" do
     OmniAuth.config.test_mode = true
-    OmniAuth.config.add_mock(:twitter,
-                            {
-                            uid: '12345',
-                            info: { nickname: 'test_twitter_user'},
-                            })
+    OmniAuth.config.add_mock(:twitter, {
+                             uid: '12345',
+                             info: { nickname: 'test_twitter_user' }
+                             })
     visit root_path
     Capybara.current_session.driver.request.env['devise.mapping'] = Devise.mappings[:user]
     Capybara.current_session.driver.request.env['omniauth.auth'] = OmniAuth.config.mock_auth[:twitter]
@@ -22,8 +21,8 @@ feature "OAuth::LoggingIn" do
   scenario "sign in with github works" do
     OmniAuth.config.test_mode = true
     OmniAuth.config.add_mock(:github, { uid: '12345',
-                                        info: { nickname: 'test_github_user'},
-                                      })
+                                        info: { nickname: 'test_github_user' }
+                                       })
     visit root_path
     Capybara.current_session.driver.request.env['devise.mapping'] = Devise.mappings[:user]
     Capybara.current_session.driver.request.env['omniauth.auth'] = OmniAuth.config.mock_auth[:github]
