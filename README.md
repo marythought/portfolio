@@ -3,15 +3,14 @@
 By [Mary Dickson](http://www.marydickson.com).
 
 ## Description
-**Project Portfolio** This is a Rails app designed with BDD to showcase my work as a web developer.
+**Project Portfolio** This is a Rails app designed with BDD to showcase my work as a web developer. Features Remote JavaScript on the project CRUD (for admin) and view (for visitors) actions. Uses Foundation Zurb DIY blocks layout.
 
 ## Usage
 Run `rake test` to test.
 
 ##TODOS
-* Add RJS to project display and CRUD actions (admin)
-* Add projects and project detals (TODOs, Angular gemstone)
-* Add comments
+* Add projects and project details (Github TODOs, Angular gemstone store, Follow the Money, Data Structures)
+* Add comments and notes
 
 ### Known Issues
 
