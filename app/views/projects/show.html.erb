@@ -11,9 +11,18 @@
 
 <img src="<%= @project.image_url %>">
 
+<p>Link to github: <%= @project.github %> </p>
+<p>Link to site: <%= @project.url %> </p>
+<p>Link to write-up: <%= @project.writeup %> </p>
+
 <p>
   <strong>Technologies used:</strong>
   <%= @project.technologies_used %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @project.description %>
 </p>
 
   <%= link_to 'Edit', edit_project_path(@project) %> |

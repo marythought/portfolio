@@ -18,12 +18,28 @@
       <%= f.text_field :name %>
     </div>
     <div class="field">
+      <%= f.label :description %><br />
+      <%= f.text_area :description %>
+    </div>
+    <div class="field">
       <%= f.label :technologies_used %><br />
       <%= f.text_area :technologies_used %>
     </div>
     <div class="field">
       <%= f.label :image_url %><br />
-      <%= f.text_area :image_url %>
+      <%= f.text_field :image_url %>
+    </div>
+    <div class="field">
+      <%= f.label :url %><br />
+      <%= f.text_field :url %>
+    </div>
+    <div class="field">
+      <%= f.label :writeup %><br />
+      <%= f.text_field :writeup %>
+    </div>
+    <div class="field">
+      <%= f.label :github %><br />
+      <%= f.text_field :github %>
     </div>
     <div class="actions">
       <%= f.submit %>
