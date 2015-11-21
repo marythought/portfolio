@@ -10,7 +10,7 @@ Run `rake test` to test.
 
 ##TODOS
 * Add RJS to project display and CRUD actions (admin)
-* Add current projects
+* Add projects and project detals (TODOs, Angular gemstone)
 * Add comments
 
 ### Known Issues
