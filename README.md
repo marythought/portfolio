@@ -8,6 +8,11 @@ By [Mary Dickson](http://www.marydickson.com).
 ## Usage
 Run `rake test` to test.
 
+##TODOS
+* Add RJS to project display and CRUD actions (admin)
+* Add current projects
+* Add comments
+
 ### Known Issues
 
 If you discover any bugs, feel free to create an issue on GitHub fork and
