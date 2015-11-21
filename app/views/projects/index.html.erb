@@ -1,12 +1,14 @@
 <div id="portfolio" class="row">
   <h2>Portfolio</h2>
+  <div id="featured" class="row">
+  </div>
   <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
     <% @projects.each do |project| %>
-
     <li>
       <a href="<%= project.url %>">
       <img src="<%= project.image_url %>" height="50"></a>
       <h3><%= project.name %></h3>
+      <p><%= link_to "read more", project %></p>
       <p> <%= project.description %></p>
       <% if current_user && current_user.admin? %>
       <p> <%= link_to 'Edit', edit_project_path(project) %>
