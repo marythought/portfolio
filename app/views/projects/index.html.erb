@@ -5,7 +5,7 @@
 
     <li>
       <a href="<%= project.url %>">
-      <img src="<%= asset_path(project.image_url)%>" height="50"></a>
+      <img src="<%= asset_path('project.image_url')%>" height="50"></a>
       <h3><%= project.name %></h3>
       <p> <%= project.description %></p>
       <% if current_user && current_user.admin? %>
