@@ -1,12 +1,15 @@
 <div id="portfolio" class="row">
   <h2>Portfolio</h2>
   <div id="featured" class="row">
+  <p><br></p>
   </div>
-  <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+  <ul class="medium-block-grid-3 large-block-grid-4">
     <% @projects.each do |project| %>
     <li>
-      <a href="<%= project.url %>">
-      <img src="<%= project.image_url %>" height="50"></a>
+      <div class="container">
+        <a href="<%= project.url %>">
+        <img src="<%= project.image_url %>" height="50"></a>
+      </div>
       <h3><%= project.name %></h3>
       <p><%= link_to "read more", project %></p>
       <p> <%= project.description %></p>

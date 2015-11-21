@@ -10,18 +10,24 @@
   padding-bottom: 10px;
 }
 
-#portfolio img {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  border-radius: 20%;
-  max-height: 200px;
-  padding-bottom: 10px;
+#portfolio {
+  .container {
+    height: 200px;
+    display: block;
+    text-align: center;
+    img {
+      margin-right: auto;
+      margin-left: auto;
+      border-radius: 20%;
+      max-height: 200px;
+      padding-bottom: 10px;
+    }
+  }
+  h3, p {
+    text-align: center;
+  }
 }
 
-#portfolio h3 {
-  text-align: center;
-}
 
 #article_cards ul li {
   display: block;
