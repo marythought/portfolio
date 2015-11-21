@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @articles = policy_scope(Article) # ArticlePolicy::Scope.new(current_user, Article.all).resolve
+    @articles = policy_scope Article # ArticlePolicy::Scope.new(current_user, Article.all).resolve
   end
 
   def show

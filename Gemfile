@@ -9,23 +9,23 @@ gem 'foundation-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'minitest-rails'
+gem 'minitest-reporters'
+gem 'omniauth'
+gem 'omniauth-github'
+gem 'omniauth-twitter'
+gem 'pundit'
 gem 'rails', '4.2.4'
+gem 'rubocop'
 gem 'sass-rails', '~> 5.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
-gem 'minitest-reporters'
-gem 'rubocop'
-gem 'pundit'
-gem 'omniauth'
-gem 'omniauth-twitter'
-gem 'omniauth-github'
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'byebug'
-  gem "minitest-rails-capybara"
+  gem 'minitest-rails-capybara'
   gem 'poltergeist'
+  gem 'sqlite3'
 end
 
 group :development do

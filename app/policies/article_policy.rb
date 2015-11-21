@@ -1,24 +1,24 @@
 class ArticlePolicy < ApplicationPolicy
   def publish?
-    @user.editor?
+    @user.admin?
   end
 
   def create?
-    @user.editor? || @user.author?
+    @user.admin? || @user.author?
   end
 
   def destroy?
-    @user.editor?
+    @user.admin?
   end
 
   def update?
-    @user.editor? || @user.author?
+    @user.admin? || @user.author?
   end
 
   # ArticlePolicy::Scope.new
   class Scope < Scope
     def resolve
-      if user.editor?
+      if user.admin?
         scope.all # default 'scope' is whatever its initialized with, eg Article.all
       elsif user.author?
         scope.where(user: user)

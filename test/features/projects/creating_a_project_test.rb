@@ -2,6 +2,7 @@ require "test_helper"
 
 feature "Projects::CreatingAProject" do
   scenario "create a new project" do
+    sign_in
     visit projects_path
     click_link('New Project')
     fill_in 'Name', with: projects(:one).name
@@ -14,6 +15,7 @@ feature "Projects::CreatingAProject" do
   end
 
   scenario "when a project is submitted with invalid info" do
+    sign_in
     visit projects_path
     click_link('New Project')
     fill_in 'Name', with: ""
@@ -22,6 +24,5 @@ feature "Projects::CreatingAProject" do
     click_button('Create Project')
     page.text.must_include "Project could not be saved"
     page.text.must_include "Name can't be blank"
-    page.text.must_include "Technologies used can't be blank"
   end
 end

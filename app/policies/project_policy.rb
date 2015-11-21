@@ -6,7 +6,7 @@ class ProjectPolicy < ApplicationPolicy
     @project = project
   end
 
-  def publish?
-    @user.role == "editor"
+  def create?
+    @user.admin?
   end
 end

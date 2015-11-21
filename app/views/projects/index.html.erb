@@ -1,33 +1,23 @@
-<div class="row">
+<div id="portfolio" class="row">
+  <h2>Portfolio</h2>
+  <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+    <% @projects.each do |project| %>
 
-  <div class="large-8 columns">
-    <p id="notice"><%= notice %></p>
-
-    <h2>Project Posts</h2>
-
-    <table>
-    <thead>
-      <tr>
-        <th>Image</th>
-        <th>Name</th>
-        <th>Technologies Used</th>
-        <th colspan="2"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @projects.each do |project| %>
-        <tr>
-          <td><img src="<%= project.image_url %>" height="50"></td>
-          <td><%= link_to project.name, project %></td>
-          <td><%= project.technologies_used %></td>
-          <td><%= link_to 'Edit', edit_project_path(project) %></td>
-          <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }  %></td>
-        </tr>
+    <li>
+      <a href="<%= project.url %>">
+      <img src="<%= asset_path(project.image_url)%>" height="50"></a>
+      <h3><%= project.name %></h3>
+      <p> <%= project.description %></p>
+      <% if current_user && current_user.admin? %>
+      <p> <%= link_to 'Edit', edit_project_path(project) %>
+      <p> <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
-    </tbody>
-    </table>
-    <br>
-    <%= link_to 'New Project', new_project_path, class: 'button' %>
+    </li>
+    <% end %>
+
+  </ul>
+  <% if current_user && current_user.admin? %>
+  <%= link_to 'New Project', new_project_path, class: 'button' %>
+  <% end %>
   </div>
 </div>

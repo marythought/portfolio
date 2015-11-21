@@ -2,6 +2,7 @@ require "test_helper"
 
 feature "Projects::EditingAProject" do
   scenario "with valid content" do
+    sign_in
     project = projects(:one)
     visit project_path(project.id)
     click_link('Edit')
@@ -14,6 +15,7 @@ feature "Projects::EditingAProject" do
   end
 
   scenario "with invalid content" do
+    sign_in
     project = projects(:two)
     visit project_path(project.id)
     click_link('Edit')
