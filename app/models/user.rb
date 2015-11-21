@@ -5,12 +5,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  def editor?
-    role == "editor"
-  end
-
-  def author?
-    role == "author"
+  def admin?
+    role == "admin"
   end
 
   def visitor?
@@ -51,11 +47,7 @@ class User < ActiveRecord::Base
 end
 
 class NullUser
-  def editor?
-    false
-  end
-
-  def author?
+  def admin?
     false
   end
 
