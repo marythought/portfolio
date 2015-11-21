@@ -1,0 +1,13 @@
+<li id="<%= dom_id project %>">
+  <div class="container">
+    <a href="<%= project.url %>">
+    <img src="<%= project.image_url %>" height="50"></a>
+  </div>
+  <h3><%= project.name %></h3>
+  <p><%= link_to "show", project, remote: true %></p>
+  <p> <%= project.description %></p>
+  <% if current_user && current_user.admin? %>
+  <p> <%= link_to 'Edit', edit_project_path(project), id: 'project_edit_id', remote: true %>
+  <p> <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
+  <% end %>
+</li>

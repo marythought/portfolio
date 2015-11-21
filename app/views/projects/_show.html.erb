@@ -1,0 +1,33 @@
+<div class="row">
+
+  <div class="large-12 columns">
+
+  <h1><%= @project.name %></h1>
+
+<img src="<%= @project.image_url %>">
+
+<p>
+<ul>
+  <% if !@project.url.empty? %>
+    <li>Link to app: <a href='<%= @project.url %>'><%= @project.url %></a> </li>
+  <% end %>
+  <% if !@project.github.empty? %>
+    <li>Link to github: <a href='<%= @project.github %>'><%= @project.github %></a> </li>
+  <% end %>
+  <% if !@project.writeup.empty? %>
+    <li>Link to write-up: <a href='<%= @project.writeup %>'><%= @project.writeup %></a> </li>
+  <% end %>
+</ul>
+
+  <h2>Description:</h2>
+  <p><%= @project.description %> </p>
+
+  <h3>Details and technologies used:</h3>
+  <p><%= @project.technologies_used %></p>
+
+  <% if current_user && current_user.admin? %>
+  <%= link_to 'Edit', edit_project_path(@project), class: 'button' %>
+  <% end %>
+  <hr>
+  </div>
+</div>

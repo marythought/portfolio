@@ -1,28 +1,17 @@
-<div id="portfolio" class="row">
+<div class="row">
   <h2>Portfolio</h2>
   <div id="featured" class="row">
-  <p><br></p>
+    <p><br></p>
   </div>
-  <ul class="medium-block-grid-3 large-block-grid-4">
-    <% @projects.each do |project| %>
-    <li>
-      <div class="container">
-        <a href="<%= project.url %>">
-        <img src="<%= project.image_url %>" height="50"></a>
-      </div>
-      <h3><%= project.name %></h3>
-      <p><%= link_to "read more", project %></p>
-      <p> <%= project.description %></p>
-      <% if current_user && current_user.admin? %>
-      <p> <%= link_to 'Edit', edit_project_path(project) %>
-      <p> <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
-    </li>
-    <% end %>
 
-  </ul>
-  <% if current_user && current_user.admin? %>
-  <%= link_to 'New Project', new_project_path, class: 'button' %>
-  <% end %>
+  <div id="portfolio">
+   <ul class="medium-block-grid-3 large-block-grid-4">
+    <% @projects.each do |project| %>
+      <%= render project %>
+    <% end %>
+    </ul>
+    <% if current_user && current_user.admin? %>
+    <%= link_to 'New Project', new_project_path, id: 'new_project_link',class: 'button', remote: true %>
+    <% end %>
   </div>
 </div>
