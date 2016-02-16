@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "2.3.0"
 
 gem 'capybara_minitest_spec', '~> 1.0.5'
 gem 'coffee-rails', '~> 4.1.0'
