@@ -2,8 +2,11 @@
   font-family: 'Cambay', sans-serif;
 }
 
-#headshot img {
+#headshot {
+  img {
   border-radius: 50%;
+  max-height: 350px;
+  }
 }
 
 #navbar {
