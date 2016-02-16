@@ -1,16 +1,22 @@
 # Portfolio
 
-By [Mary Dickson](http://www.marydickson.com).
+[Mary Dickson Diaz portfolio](http://www.marydickson.info).
 
 ## Description
 **Project Portfolio** This is a Rails app designed with BDD to showcase my work as a web developer. Features Remote JavaScript on the project CRUD (for admin) and view (for visitors) actions. Uses Foundation Zurb DIY blocks layout.
 
 ## Usage
-Run `rake test` to test.
+Run `rake test` to test. (Except, don't! Because everything broke after I made it a single-page app.)
 
-##TODOS
-* Add projects and project details (Github TODOs, Angular gemstone store, Follow the Money, Data Structures)
-* Add comments and notes
+## TODOS
+- Fix tests
+- Add projects and project details (Github TODOs, Angular gemstone store, Follow the Money)
+- Add comments to projects
+- Fix sort on projects page
+- Add blog posts with markdown formatting
+- Add resume page (currently links offsite)
+- Add file upload for new project / blog post images
+- Add email contact form
 
 ### Known Issues
 
