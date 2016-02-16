@@ -2,11 +2,11 @@
   <div class="row">
     <hr/>
     <h4>Meta</h4>
-      <% if user_signed_in? %>
-        <p>logged in as <%= current_user.email %> |
-        <%= link_to 'Log out', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% else %>
-        <%= link_to 'Log in', new_user_session_path %>
-      <% end %>
+    <% if user_signed_in? %>
+      <p>logged in as <%= current_user.email %> |
+      <%= link_to 'Log out', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% else %>
+      <%= link_to 'Log in', new_user_session_path %>
+    <% end %>
   </div>
 </div>
