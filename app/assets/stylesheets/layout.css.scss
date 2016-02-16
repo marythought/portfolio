@@ -6,6 +6,24 @@
   border-radius: 50%;
 }
 
+#navbar {
+  li {
+    display: inline-block;
+    padding: 10px;
+  }
+  h1 {
+    padding-left: 10px;
+  }
+}
+
+#banner{
+  padding-right: 10px;
+}
+
+#about {
+  padding-left: 10px;
+  padding-right: 10px;
+}
 #about-bullets li {
   padding-bottom: 10px;
 }
@@ -35,6 +53,11 @@
   }
 }
 
+#testimonials {
+  h2 {
+    padding-left: 10px;
+  }
+}
 
 #article_cards ul li {
   display: block;
