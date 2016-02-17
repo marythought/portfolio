@@ -1,5 +1,3 @@
-
-
 function Article(object) {
   this.title = object.title.rendered;
   this.link = object.guid.rendered;
@@ -23,13 +21,20 @@ Article.loadAll = function(){
   Article.all = Article.rawData.map(function(ele) {
     return art = new Article(ele);
   });
+};
+
+Article.render = function(){
   Article.all.forEach(function(art){
     $('#blog-titles').append(art.toHtml())
   })
-};
+}
 
-$.ajax({
-  url: 'http://www.marydickson.com/wp-json/wp/v2/posts',
-}).done(function( data ) {
-  Article.rawData = data
-}).done(Article.loadAll);
+Article.ajaxCall = function(){
+  $.ajax({
+    url: 'http://www.marydickson.com/wp-json/wp/v2/posts',
+  }).done(function( data ) {
+    Article.rawData = data;
+    Article.loadAll();
+    Article.render();
+  });
+}
