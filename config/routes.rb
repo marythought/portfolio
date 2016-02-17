@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   # end
 
   resources :projects
-  root 'welcome#index'
+  root 'projects#index'
   get 'about', to: 'welcome#about'
 end

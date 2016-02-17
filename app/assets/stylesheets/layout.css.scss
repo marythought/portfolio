@@ -19,14 +19,47 @@
   }
 }
 
-#banner{
-  padding-right: 10px;
+.hero {
+  background: url('skyline.jpg') no-repeat center center;
+  background-size: cover;
+  height: 40vh;
+  &:before {
+    content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		// background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
+		// opacity: .8;
+  }
+  h1 {
+    color: white;
+    font-size: 2rem;
+    line-height: 2em;
+    padding-top: 6.5rem;
+    font-weight: 500;
+    text-align: left;
+  }
+  #sitetitle{
+    background: black;
+    opacity: .5;
+  }
+  // large screen
+  @media only screen and (min-width: 40.063em) {
+    h1 {
+      padding-top: 7rem;
+      text-align: left;
+      font-size: 2.3rem;
+    }
+  }
 }
 
-#about {
-  padding-left: 10px;
-  padding-right: 10px;
+
+#about, #portfolioindex, #login {
+  padding: 20px;
 }
+
 #about-bullets li {
   padding-bottom: 10px;
 }
