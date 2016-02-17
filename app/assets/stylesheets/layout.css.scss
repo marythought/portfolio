@@ -20,9 +20,12 @@
 }
 
 .hero {
+  display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   background: url('skyline.jpg') no-repeat center center;
   background-size: cover;
-  height: 40vh;
+  height: 260px;
   &:before {
     content: '';
 		position: absolute;
@@ -37,7 +40,6 @@
     color: white;
     font-size: 2rem;
     line-height: 2em;
-    padding-top: 6.5rem;
     font-weight: 500;
     text-align: left;
   }
@@ -48,15 +50,13 @@
   // large screen
   @media only screen and (min-width: 40.063em) {
     h1 {
-      padding-top: 7rem;
       text-align: left;
       font-size: 2.3rem;
     }
   }
 }
 
-
-#about, #portfolioindex, #login {
+#about, #portfolioindex, #login, #blog {
   padding: 20px;
 }
 
@@ -104,4 +104,13 @@
 
 #article_cards img {
   max-height: 150px;
+}
+
+#blog-titles {
+  li {
+    list-style-type:none
+  }
+  img {
+    max-height: 400px;
+  }
 }

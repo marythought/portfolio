@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :projects
   root 'projects#index'
   get 'about', to: 'welcome#about'
+  get 'resume', to: 'welcome#resume'
+  get 'blog', to: 'welcome#blog'
 end
