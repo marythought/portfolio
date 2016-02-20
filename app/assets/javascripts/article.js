@@ -31,7 +31,7 @@ Article.render = function(){
 
 Article.ajaxCall = function(){
   $.ajax({
-    url: 'http://www.marydickson.com/wp-json/wp/v2/posts?per_page=20',
+    url: 'http://www.marydickson.com/wp-json/wp/v2/posts?per_page=20&filter[cat]=25',
   }).done(function( data ) {
     Article.rawData = data;
     Article.loadAll();
