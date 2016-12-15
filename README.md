@@ -13,8 +13,6 @@ Run `rake test` to test. (Except, don't! Because everything broke after I made i
 - Add projects and project details (Github TODOs, Angular gemstone store, Follow the Money)
 - Add comments to projects
 - Fix sort on projects page
-- Add blog posts with markdown formatting
-- Add resume page (currently links offsite)
 - Add file upload for new project / blog post images
 - Add email contact form
 
