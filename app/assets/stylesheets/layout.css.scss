@@ -23,6 +23,12 @@
   h1 {
     padding-left: 10px;
   }
+  #navlinks {
+    li {
+     background: #d4e3fc;
+     border-radius: 10px
+    }
+  }
 }
 
 .hero {
@@ -51,7 +57,10 @@
   }
   #sitetitle{
     background: black;
-    opacity: .5;
+    opacity: .6;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
   }
   // large screen
   @media only screen and (min-width: 40.063em) {
@@ -119,4 +128,8 @@
   img {
     max-height: 400px;
   }
+}
+
+.spinner {
+  height: 100px;
 }

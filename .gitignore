@@ -18,3 +18,5 @@
 
 # Ignore env secrets
 .env
+
+*/**/.DS_store
