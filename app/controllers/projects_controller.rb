@@ -11,34 +11,19 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    if @project.save
-      # flash[:notice] = "Project has been successfully created."
-      # render :show
-    else
-      flash[:notice] = "Project could not be saved"
-      render :new
-    end
+    render :new unless @project.save
   end
 
-  def show
-  end
+  def show; end
 
-  def edit
-  end
+  def edit; end
 
   def update
-    if @project.update_attributes(project_params)
-      # flash[:notice] = 'Project was successfully updated.'
-      # redirect_to @project
-    else
-      # flash[:notice] = "Project could not be updated"
-      render :edit
-    end
+    render :edit unless @project.update_attributes(project_params)
   end
 
   def destroy
     @project.destroy
-    # flash[:notice] = 'Project was successfully destroyed.'
   end
 
   private

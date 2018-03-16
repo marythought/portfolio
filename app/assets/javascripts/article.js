@@ -7,6 +7,10 @@ function Article(object) {
   }
 }
 
+function hideSpinner(){
+  $('.spinner').hide()
+}
+
 Article.prototype.toHtml = function() {
   title = '<li><h3><a href=' + this.link + ' target="_blank">' + this.title + '</a></h3>'
   text = this.excerpt + '<em><a href=' + this.link + ' target="_blank">READ MORE</a></em></li><p><br><p>';
@@ -17,24 +21,18 @@ Article.prototype.toHtml = function() {
   }
 };
 
-Article.loadAll = function(){
-  Article.all = Article.rawData.map(function(ele) {
-    return art = new Article(ele);
+Article.render = function(rawData){
+  rawData.forEach(function(ele) {
+    art = new Article(ele);
+    $('#blog-titles').append(art.toHtml())
   });
 };
-
-Article.render = function(){
-  Article.all.forEach(function(art){
-    $('#blog-titles').append(art.toHtml())
-  })
-}
 
 Article.ajaxCall = function(){
   $.ajax({
     url: 'http://www.marydickson.com/wp-json/wp/v2/posts?per_page=20&filter[cat]=25',
   }).done(function( data ) {
-    Article.rawData = data;
-    Article.loadAll();
-    Article.render();
+    hideSpinner();
+    Article.render(data);
   });
 }
