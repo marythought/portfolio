@@ -30,3 +30,12 @@ News.ajaxCall = function () {
     News.render(data);
   });
 }
+
+function newsRefresh() {
+  $('.spinner').show()
+  $.ajax({
+    url: 'http://newsy-bits.herokuapp.com/crawl',
+  }).done(function (data) {
+    News.ajaxCall();
+  });
+}
