@@ -8,4 +8,6 @@ class WelcomeController < ApplicationController
   def resume; end
 
   def blog; end
+
+  def news; end
 end
