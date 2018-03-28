@@ -36,6 +36,7 @@ function newsRefresh() {
   $.ajax({
     url: 'http://newsy-bits.herokuapp.com/crawl',
   }).done(function (data) {
+    $('#news-list').empty()
     News.ajaxCall();
   });
 }
