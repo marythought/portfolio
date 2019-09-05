@@ -1,18 +1,10 @@
-// 064e86 blue
-// 5db7de bright blue
-// fff5ef white
-// a39b8b taupe
-// ebbab9 pink
-
 * {
   font-family: 'Cambay', sans-serif;
 }
 
-#headshot {
-  img {
-  border-radius: 50%;
-  max-height: 350px;
-  }
+#testimonials {
+  float: none;
+  clear: both;
 }
 
 #navbar {
@@ -23,12 +15,6 @@
   h1 {
     padding-left: 10px;
   }
-  #navlinks {
-    li {
-     background: #d4e3fc;
-     border-radius: 10px
-    }
-  }
 }
 
 .hero {
@@ -38,37 +24,6 @@
   background: url('skyline.jpg') no-repeat center center;
   background-size: cover;
   height: 260px;
-  &:before {
-    content: '';
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		// background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
-		// opacity: .8;
-  }
-  h1 {
-    color: white;
-    font-size: 2rem;
-    line-height: 2em;
-    font-weight: 500;
-    text-align: left;
-  }
-  #sitetitle{
-    background: black;
-    opacity: .6;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 10px;
-  }
-  // large screen
-  @media only screen and (min-width: 40.063em) {
-    h1 {
-      text-align: left;
-      font-size: 2.3rem;
-    }
-  }
 }
 
 #about, #portfolioindex, #login, #blog, #news {
@@ -94,31 +49,14 @@
     img {
       margin-right: auto;
       margin-left: auto;
-      border-radius: 20%;
       max-height: 200px;
       padding-bottom: 10px;
+      height: auto;
     }
   }
   h3, p {
     text-align: center;
   }
-}
-
-#testimonials {
-  h2 {
-    padding-left: 10px;
-  }
-}
-
-#article_cards ul li {
-  display: block;
-  padding: 5px;
-  height: 400px;
-  text-align: center;
-}
-
-#article_cards img {
-  max-height: 150px;
 }
 
 #blog-titles {
