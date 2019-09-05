@@ -8,6 +8,11 @@
 
 ## Usage
 
+Deploying:
+
+- rails assets:clobber
+- rails assets:precompile
+
 Run `rake test` to test. (Except, don't! Because everything broke after I made it a single-page app.)
 
 ## TODOS
