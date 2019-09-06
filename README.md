@@ -4,7 +4,7 @@
 
 ## Description
 
-**Project Portfolio** This is a Rails app designed to showcase my work as a web developer. Features Remote JavaScript on the project CRUD (for admin) and view (for visitors) actions.
+**Project Portfolio** This is a Rails app designed to showcase my work as a web developer. Features Remote JavaScript on the project CRUD (for admin) and view (for visitors) actions. Since first launching this site I have upgraded it from Rails 4 to Rails 5.3, including adding Action Storage for uploadable project images.
 
 ## Usage
 
@@ -27,11 +27,6 @@ Deploying:
 ## Author
 
 - Mary Dickson [github](https://github.com/marythought)
-
-## Attribution
-
-- [Contact icons](http://blog.spoongraphics.co.uk/freebies/free-hand-drawn-doodle-icon-set-for-bloggers)
-- Template adapted from [Zurb portfolio](http://foundation.zurb.com/templates/portfolio.html)
 
 ## License
 

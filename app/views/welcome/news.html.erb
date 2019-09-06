@@ -1,13 +1,12 @@
 <script> News.ajaxCall() </script>
-<div id="news" class="row">
-  <div class="large-12 columns">
-    <div class="row">
-
-      <div class="large-12 columns">
-        <h2>Tech News</h2>
-        <button class="btn btn-primary" onclick="newsRefresh()">Refresh</button>
-        <img src="<%= asset_path 'Loading_icon.gif' %>" class='spinner'>
-        <ul id="news-list">
+<div id='news' class='row'>
+  <div class='large-12 columns'>
+    <div class='row'>
+      <div class='large-12 columns'>
+        <h1>Tech News</h1>
+        <button class='btn btn-primary' onclick='newsRefresh()'>Refresh</button>
+        <img src='<%= asset_path 'Loading_icon.gif' %>' class='spinner'>
+        <ul id='news-list'>
         </ul>
       </div>
     </div>

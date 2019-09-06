@@ -1,5 +1,5 @@
 <div id='login' class="large-12 columns">
-  <h4>Meta</h4>
+  <h3>Meta</h3>
   <% if user_signed_in? %>
     <p>logged in as <%= current_user.email %> |
     <%= link_to 'Log out', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %>
