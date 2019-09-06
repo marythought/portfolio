@@ -1,0 +1,131 @@
+[class*="block-grid-"] {
+  display: block;
+  padding: 0;
+  margin: 0 -0.625rem;
+}
+
+[class*="block-grid-"]:before,
+[class*="block-grid-"]:after {
+  content: " ";
+  display: table;
+}
+
+[class*="block-grid-"]:after {
+  clear: both;
+}
+
+[class*="block-grid-"]>li {
+  display: block;
+  float: left;
+  height: auto;
+  padding: 0 0.625rem 1.25rem;
+}
+
+@media only screen and (min-width: 64.0625em) {
+  .large-block-grid-4>li {
+    list-style: none;
+    width: 23%;
+  }
+
+  .large-block-grid-4>li:nth-of-type(1n) {
+    clear: none;
+  }
+
+  .large-block-grid-4>li:nth-of-type(4n+1) {
+    clear: both;
+  }
+}
+
+/* line 163, /Users/mary/.gem/ruby/2.3.0/gems/foundation-rails-5.5.2.1/vendor/assets/stylesheets/foundation/components/_grid.scss */
+.column,
+.columns {
+  position: relative;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  float: left;
+}
+
+/* line 168, /Users/mary/.gem/ruby/2.3.0/gems/foundation-rails-5.5.2.1/vendor/assets/stylesheets/foundation/components/_grid.scss */
+.large-1 {
+  width: 8.33333%;
+}
+
+/* line 168, /Users/mary/.gem/ruby/2.3.0/gems/foundation-rails-5.5.2.1/vendor/assets/stylesheets/foundation/components/_grid.scss */
+.large-2 {
+  width: 16.66667%;
+}
+
+/* line 168, /Users/mary/.gem/ruby/2.3.0/gems/foundation-rails-5.5.2.1/vendor/assets/stylesheets/foundation/components/_grid.scss */
+.large-3 {
+  width: 25%;
+}
+
+/* line 168, /Users/mary/.gem/ruby/2.3.0/gems/foundation-rails-5.5.2.1/vendor/assets/stylesheets/foundation/components/_grid.scss */
+.large-4 {
+  width: 33.33333%;
+}
+
+/* line 168, /Users/mary/.gem/ruby/2.3.0/gems/foundation-rails-5.5.2.1/vendor/assets/stylesheets/foundation/components/_grid.scss */
+.large-5 {
+  width: 41.66667%;
+}
+
+/* line 168, /Users/mary/.gem/ruby/2.3.0/gems/foundation-rails-5.5.2.1/vendor/assets/stylesheets/foundation/components/_grid.scss */
+.large-6 {
+  width: 50%;
+}
+
+/* line 168, /Users/mary/.gem/ruby/2.3.0/gems/foundation-rails-5.5.2.1/vendor/assets/stylesheets/foundation/components/_grid.scss */
+.large-7 {
+  width: 58.33333%;
+}
+
+/* line 168, /Users/mary/.gem/ruby/2.3.0/gems/foundation-rails-5.5.2.1/vendor/assets/stylesheets/foundation/components/_grid.scss */
+.large-8 {
+  width: 66.66667%;
+}
+
+/* line 168, /Users/mary/.gem/ruby/2.3.0/gems/foundation-rails-5.5.2.1/vendor/assets/stylesheets/foundation/components/_grid.scss */
+.large-9 {
+  width: 75%;
+}
+
+/* line 168, /Users/mary/.gem/ruby/2.3.0/gems/foundation-rails-5.5.2.1/vendor/assets/stylesheets/foundation/components/_grid.scss */
+.large-10 {
+  width: 83.33333%;
+}
+
+/* line 168, /Users/mary/.gem/ruby/2.3.0/gems/foundation-rails-5.5.2.1/vendor/assets/stylesheets/foundation/components/_grid.scss */
+.large-11 {
+  width: 91.66667%;
+}
+
+/* line 168, /Users/mary/.gem/ruby/2.3.0/gems/foundation-rails-5.5.2.1/vendor/assets/stylesheets/foundation/components/_grid.scss */
+.large-12 {
+  width: 100%;
+}
+
+/* line 243, /Users/mary/.gem/ruby/2.3.0/gems/foundation-rails-5.5.2.1/vendor/assets/stylesheets/foundation/components/_grid.scss */
+.column,
+.columns {
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  width: 100%;
+  float: left;
+}
+
+/* line 248, /Users/mary/.gem/ruby/2.3.0/gems/foundation-rails-5.5.2.1/vendor/assets/stylesheets/foundation/components/_grid.scss */
+.column+.column:last-child,
+.columns+.column:last-child,
+.column+.columns:last-child,
+.columns+.columns:last-child {
+  float: right;
+}
+
+/* line 251, /Users/mary/.gem/ruby/2.3.0/gems/foundation-rails-5.5.2.1/vendor/assets/stylesheets/foundation/components/_grid.scss */
+.column+.column.end,
+.columns+.column.end,
+.column+.columns.end,
+.columns+.columns.end {
+  float: left;
+}

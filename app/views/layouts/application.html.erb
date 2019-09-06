@@ -1,28 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <%= render 'layouts/meta' %>
+    <title><%= content_for?(:title) ? yield(:title) : "Mary Dickson Diaz - Portfolio" %></title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href='https://fonts.googleapis.com/css?family=Cambay:400,700' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
-
-<div class="row">
-  <div class="large-12 columns">
-  <%= render 'layouts/navbar' %>
-  <% flash.each do |key, value| %>
-    <div class="alert-box round <%= flash_class(key) %>">
-      <%= value %>
-    </div>
-  <% end %>
-</div>
-</div>
-<div class="row">
-  <%= yield %>
-</div>
-  <%= render 'layouts/contact' %>
-  <%= render 'layouts/login' %>
-  <%= render 'layouts/footer' %>
-
+    <%= render 'layouts/navbar' %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+    <%= render 'layouts/contact' %>
+    <%= render 'layouts/login' %>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
