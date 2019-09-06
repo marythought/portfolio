@@ -22,11 +22,7 @@ Deploying:
 - Add file upload for new project / blog post images (paperclip?)
 - connect to [LinkedIn API (?)](https://www.linkedin.com/developers/)
 - accessibility check
-- Rubocop
 - Add email contact form
-- Fix CSS and questionable design elements
-- Fix sort on projects page
-- Fix tests
 - Add comments to projects
 
 ## Author
