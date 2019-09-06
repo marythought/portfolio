@@ -12,13 +12,12 @@ Deploying:
 
 - rails assets:clobber
 - rails assets:precompile
-
-Run `rake test` to test. (Except, don't! Because everything broke after I made it a single-page app.)
+- git push heroku [$branch_name]:master
 
 ## TODOS
 
 - Tests
-- https://devcenter.heroku.com/articles/upgrading-to-the-latest-stack
+- [upgrade heroku](https://devcenter.heroku.com/articles/upgrading-to-the-latest-stack)
 - Import resume as markdown from S3, enable edit and save for admin
 - Add file upload for new project / blog post images (paperclip?)
 - connect to [LinkedIn API (?)](https://www.linkedin.com/developers/)
