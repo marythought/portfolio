@@ -17,7 +17,6 @@ Deploying:
 ## TODOS
 
 - Tests
-- [upgrade heroku](https://devcenter.heroku.com/articles/upgrading-to-the-latest-stack)
 - Import resume as markdown from S3, enable edit and save for admin
 - Add file upload for new project / blog post images (paperclip?)
 - connect to [LinkedIn API (?)](https://www.linkedin.com/developers/)
