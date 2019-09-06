@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'aws-sdk-s3', require: false
 gem 'devise'
 gem 'redcarpet'
 gem 'rubocop'
