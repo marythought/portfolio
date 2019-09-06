@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'aws-sdk-s3', require: false
 gem 'devise'
+gem 'mini_magick'
 gem 'redcarpet'
 gem 'rubocop'
 gem 'bootsnap'
