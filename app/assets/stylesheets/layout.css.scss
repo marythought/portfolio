@@ -3,8 +3,8 @@
 }
 
 #testimonials {
-  float: none;
   clear: both;
+  float: none;
 }
 
 #navbar {
@@ -26,7 +26,7 @@
   height: 260px;
 }
 
-#about, #portfolioindex, #login, #blog, #news {
+#about, #portfolioindex, #login, #blog, #news, #resume {
   padding: 20px;
 }
 
@@ -43,15 +43,15 @@
 
 #portfolio {
   .container {
-    height: 200px;
     display: block;
+    height: 200px;
     text-align: center;
     img {
-      margin-right: auto;
-      margin-left: auto;
-      max-height: 200px;
-      padding-bottom: 10px;
       height: auto;
+      margin-left: auto;
+      margin-right: auto;
+      max-height: 100%;
+      max-width: 100%;
     }
   }
   h3, p {
@@ -66,6 +66,10 @@
   img {
     max-height: 400px;
   }
+}
+
+#resume.column, #blog.columns {
+  width: 83.33333%;
 }
 
 .spinner {
