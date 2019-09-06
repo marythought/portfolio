@@ -7,7 +7,7 @@ git_source(:github) do |repo_name|
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.2.0'
+gem 'rails', '~> 5.2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -33,10 +33,16 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'actionview', '>= 5.2.2.1'
+gem 'activejob', '>= 5.2.1.1'
+gem 'activestorage', '>= 5.2.1.1'
+gem 'aws-sdk-s3', require: false
+gem 'bootsnap'
 gem 'devise'
+gem 'mini_magick'
+gem 'railties', '>= 5.2.2.1'
 gem 'redcarpet'
 gem 'rubocop'
-gem 'bootsnap'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record

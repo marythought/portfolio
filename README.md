@@ -17,8 +17,8 @@ Deploying:
 ## TODOS
 
 - Tests
+- https://mentalized.net/journal/2017/04/22/run-rails-migrations-on-heroku-deploy/
 - Import resume as markdown from S3, enable edit and save for admin
-- Add file upload for new project / blog post images (paperclip?)
 - connect to [LinkedIn API (?)](https://www.linkedin.com/developers/)
 - accessibility check
 - Add email contact form

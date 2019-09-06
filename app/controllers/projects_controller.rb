@@ -12,6 +12,9 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     render :new unless @project.save
+    respond_to do |format|
+      format.html { redirect_to action: 'index' }
+    end
   end
 
   def show; end
@@ -20,6 +23,9 @@ class ProjectsController < ApplicationController
 
   def update
     render :edit unless @project.update_attributes(project_params)
+    respond_to do |format|
+      format.html { redirect_to action: 'index' }
+    end
   end
 
   def destroy
@@ -33,6 +39,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:name, :description, :technologies_used, :url, :image_url, :writeup, :github)
+    params.require(:project).permit(:name, :description, :technologies_used, :url, :image_url, :image, :writeup, :github)
   end
 end
