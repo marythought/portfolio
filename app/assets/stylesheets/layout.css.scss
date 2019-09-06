@@ -12,9 +12,6 @@
     display: inline-block;
     padding: 10px;
   }
-  h1 {
-    padding-left: 10px;
-  }
 }
 
 .hero {
@@ -26,7 +23,7 @@
   height: 260px;
 }
 
-#about, #portfolioindex, #login, #blog, #news, #resume {
+#about, #portfolioindex, #login, #blog, #news, #resume, #footer {
   padding: 20px;
 }
 
@@ -65,11 +62,16 @@
   }
   img {
     max-height: 400px;
+    max-width: 300px;
   }
 }
 
 #resume.column, #blog.columns {
   width: 83.33333%;
+}
+
+#footer p {
+  margin-left: 40px;
 }
 
 .spinner {

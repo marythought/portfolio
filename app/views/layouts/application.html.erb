@@ -7,15 +7,14 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href='https://fonts.googleapis.com/css?family=Cambay:400,700' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
     <%= render 'layouts/navbar' %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <div class="row">
-      <%= yield %>
-    </div>
+    <%= yield %>
     <%= render 'layouts/contact' %>
     <%= render 'layouts/login' %>
     <%= render 'layouts/footer' %>
