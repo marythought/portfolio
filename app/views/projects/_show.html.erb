@@ -6,8 +6,8 @@
 
   <% if @project.image.attached? %>
     <%= image_tag @project.image %>
-  <% elsif project.image_url.present? %>
-    <img src='<%= project.image_url %>'</a>
+  <% elsif @project.image_url.present? %>
+    <img src='<%= @project.image_url %>'</a>
   <% end %>
 
   <p>
