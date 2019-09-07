@@ -8,10 +8,10 @@
     <% end %>
   </div>
   <h3><%= project.name %></h3>
-  <p><%= link_to 'show', project, remote: true %></p>
+  <p><%= link_to t('show'), project, remote: true %></p>
   <p> <%= project.description %></p>
   <% if current_user && current_user.admin? %>
-    <p> <%= link_to 'Edit', edit_project_path(project), id: 'project_edit_id', remote: true %>
-    <p> <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
+    <p> <%= link_to t('edit'), edit_project_path(project), id: 'project_edit_id', remote: true %>
+    <p> <%= link_to t('destroy'), project, method: :delete, data: { confirm: t('confirm') }, remote: true %>
   <% end %>
 </li>

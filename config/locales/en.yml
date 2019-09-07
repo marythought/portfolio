@@ -30,4 +30,57 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  confirm: Are you sure?
+  destroy: Destroy
+  edit: Edit
+  show: Show
+  back: Back
+  contact:
+    title: Contact
+    email: Email
+    email_link: mailto:mdickson@gmail.com
+    twitter: Twitter
+    twitter_link: https://twitter.com/marythought
+    linkedin: LinkedIn
+    linkedin_link: https://www.linkedin.com/in/mcdickson/
+    github: GitHub
+    github_link: https://github.com/marythought
+  login:
+    title: Meta
+    login: Log in
+    logout: Log out
+    user: Logged in as %{email}
+  footer:
+    text: Page and images by Mary Dickson except where otherwise noted.
+  navbar:
+    about: About
+    portfolio: Portfolio
+    blog: Blog
+    resume: Resume
+    news: Tech News
+    title: Mary Dickson Diaz - Portfolio
+  projects:
+    show:
+      app_link: 'Link to app:'
+      github_link: 'Link to github:'
+      writeup_link: 'Link to write-up:'
+      description: 'Description:'
+      details: 'Details and technologies used:'
+    edit:
+      title: Editing Project
+    index:
+      title: Portfolio
+      new: New Project
+    new:
+      title: New Project
+  welcome:
+    about:
+      title: About Mary
+      blurb: I'm a full-stack senior software developer in Seattle, WA experienced in Ruby on Rails and Go. I enjoy solving problems with diverse teams for mission-driven organizations.
+      bullets_html: "<li>4+ years doing software development, QA, and testing at <a href='http://www.expertvoice.com'>Expert Voice</a> and <a href='http://www.navigatingcancer.com'>Navigating Cancer</a></li><li>Home life: raising a small cohort of ninja turtles in South Seattle</li><li>Trained via Code Fellows Ruby on Rails development accelerator</li><li>Ten years experience as a non-profit fundraiser, managing fundraising strategy and relationships with board members, internal stakeholders, and donors</li><li>You can't scare me, I taught middle school</li>"
+      testimonials: Testimonials
+      testimonial_html: "<blockquote>Mary's leadership skills, her persistence towards success, and her ability to think critically through complex projects make her an invaluable addition to any team.<cite> Jackson Giles, entrepreneur</cite></blockquote><blockquote>Mary is a strategic thinker with excellent people skills and attention to detail. She manages complex projects skillfully and with reliably good results, and makes those she works with feel valued.<cite> non-profit board member</cite></blockquote><blockquote>I can’t get over how much I like your robot app. I’ve had a terrible morning of phone calls and it really made my day.<cite> Joshua Blount, web developer</cite></blockquote>"
+    blog:
+      title: Recent Blog Posts
+    news:
+      title: Tech News
