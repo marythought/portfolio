@@ -1,9 +1,9 @@
 <div id='login' class="large-12 columns">
-  <h3>Meta</h3>
+  <h3><%= t('login.title') %></h3>
   <% if user_signed_in? %>
-    <p>logged in as <%= current_user.email %> |
-    <%= link_to 'Log out', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= t('login.user', email: current_user.email) %> |
+    <%= link_to t('login.logout'), destroy_user_session_path, method: :delete, data: { confirm: t('confirm') } %>
   <% else %>
-    <%= link_to 'Log in', new_user_session_path %>
+    <%= link_to t('login.login'), new_user_session_path %>
   <% end %>
 </div>

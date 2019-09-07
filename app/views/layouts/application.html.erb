@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang='en'>
   <head>
-    <title><%= content_for?(:title) ? yield(:title) : 'Mary Dickson Diaz - Portfolio' %></title>
+    <title><%= content_for?(:title) ? yield(:title) : t('navbar.title') %></title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
