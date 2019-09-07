@@ -1,0 +1,55 @@
+es:
+  confirm: ¿Estás seguro?
+  destroy: Destruir
+  edit: Editar
+  show: Presentar
+  back: Detrás
+  contact:
+    title: Contacto
+    email: Email
+    email_link: mailto:mdickson@gmail.com
+    twitter: Twitter
+    twitter_link: https://twitter.com/marythought
+    linkedin: LinkedIn
+    linkedin_link: https://www.linkedin.com/in/mcdickson/
+    github: GitHub
+    github_link: https://github.com/marythought
+  login:
+    title: Meta
+    login: Iniciar sesión
+    logout: Cerrar sesión
+    user: Logged in as %{email}
+  footer:
+    text: Página e imágenes de Mary Dickson, excepto donde se indique lo contrario.
+  navbar:
+    about: Sobre mi
+    portfolio: Portafolio
+    blog: Blog
+    resume: Resumen
+    news: Noticias Tecnológicas
+    title: Mary Dickson Diaz - Portafolio
+  projects:
+    show:
+      app_link: 'Link to app:'
+      github_link: 'Link to github:'
+      writeup_link: 'Link to write-up:'
+      description: 'Description:'
+      details: 'Details and technologies used:'
+    edit:
+      title: Editing Project
+    index:
+      title: Portafolio
+      new: Nuevo proyecto
+    new:
+      title: Nuevo proyecto
+  welcome:
+    about:
+      title: Sobre mi
+      blurb: Soy un desarrollador de software senior de pila completa en Seattle, WA, con experiencia en Ruby on Rails and Go. Disfruto resolviendo problemas con diversos equipos para organizaciones impulsadas por la misión.
+      bullets_html: "<li>4+ years doing software development, QA, and testing at <a href='http://www.expertvoice.com'>Expert Voice</a> and <a href='http://www.navigatingcancer.com'>Navigating Cancer</a></li><li>Home life: raising a small cohort of ninja turtles in South Seattle</li><li>Trained via Code Fellows Ruby on Rails development accelerator</li><li>Ten years experience as a non-profit fundraiser, managing fundraising strategy and relationships with board members, internal stakeholders, and donors</li><li>You can't scare me, I taught middle school</li>"
+      testimonials: Testimonios
+      testimonial_html: "<blockquote>Las habilidades de liderazgo de Mary, su persistencia hacia el éxito y su capacidad de pensar críticamente a través de proyectos complejos la convierten en una incorporación invaluable para cualquier equipo.<cite> Jackson Giles, entrepreneur</cite></blockquote><blockquote>Mary es una pensadora estratégica con excelentes habilidades de personas y atención al detalle. Ella maneja proyectos complejos con habilidad y con buenos resultados, y hace que aquellos con quienes trabaja se sientan valorados.<cite> non-profit board member</cite></blockquote><blockquote>No puedo superar cuánto me gusta tu aplicación de robot. Tuve una terrible mañana de llamadas telefónicas y realmente me alegró el día.<cite> Joshua Blount, web developer</cite></blockquote>"
+    blog:
+      title: Entradas recientes del blog
+    news:
+      title: Noticias Tecnológicas
