@@ -44,6 +44,9 @@ gem 'railties', '>= 5.2.2.1'
 gem 'redcarpet'
 gem 'rubocop'
 
+gem 'webpacker'
+gem 'react-rails'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.3.13'

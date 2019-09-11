@@ -8,4 +8,9 @@ Rails.application.routes.draw do
   get 'resume', to: 'welcome#resume'
   get 'blog', to: 'welcome#blog'
   get 'news', to: 'welcome#news'
+  get 'calendar', to: 'welcome#calendar'
+
+  namespace :v1, defaults: { format: 'json' } do
+    get 'api', to: 'api#index'
+  end
 end

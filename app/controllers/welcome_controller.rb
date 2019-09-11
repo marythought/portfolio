@@ -10,4 +10,6 @@ class WelcomeController < ApplicationController
   def blog; end
 
   def news; end
+
+  def calendar; end
 end
