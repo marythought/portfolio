@@ -26,6 +26,7 @@ Since first launching this site I have upgraded it from Rails 4 to Rails 5.3.
 
 - CI
 - Tests
+  - https://scotch.io/tutorials/build-a-restful-json-api-with-rails-5-part-one
 - [set up heroku deploy script](https://mentalized.net/journal/2017/04/22/run-rails-migrations-on-heroku-deploy/)
 - connect to [LinkedIn API (?)](https://www.linkedin.com/developers/)
 - Add email contact form
