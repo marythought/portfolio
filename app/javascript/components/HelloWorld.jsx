@@ -3,27 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { List } from 'semantic-ui-react';
-
-/* global fetch */
-const GET_THINGS_REQUEST = 'GET_THINGS_REQUEST';
-const GET_THINGS_SUCCESS = 'GET_THINGS_SUCCESS';
-
-export function getThingsSuccess(json) {
-  return {
-    type: GET_THINGS_SUCCESS,
-    json,
-  };
-}
-
-function getThings() {
-  return (dispatch) => {
-    dispatch({ type: GET_THINGS_REQUEST });
-    return fetch('v1/api.json')
-      .then((response) => response.json())
-      .then((json) => dispatch(getThingsSuccess(json)))
-      .catch((error) => console.log(error));
-  };
-}
+import { getThings } from '../actions';
 
 // eslint-disable-next-line no-shadow
 const HelloWorld = ({ things, getThings }) => {
