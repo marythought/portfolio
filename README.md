@@ -35,6 +35,8 @@ Since first launching this site I have upgraded it from Rails 4 to Rails 5.3.
 - Finish and add React/Redux commonplace book feature
   - [free code camp rails with react tutorial](https://www.freecodecamp.org/news/how-to-create-a-rails-project-with-a-react-and-redux-front-end-8b01e17a1db/)
   - Explain what a [commonplace book is](https://en.wikipedia.org/wiki/Commonplace_book)
+  - [clean up the data fetch](https://blog.logrocket.com/patterns-for-data-fetching-in-react-981ced7e5c56/)
+  - clean up the formatting
   - Admin can add links, automatically published
   - Admin can add existing categories
   - Admin can add a new category
