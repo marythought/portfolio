@@ -7,19 +7,15 @@ import configureStore from '../configureStore';
 
 const store = configureStore();
 
-class App extends React.Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <BrowserRouter>
-          <Switch>
-            <Route exact path="/" render={() => ('Home!')} />
-            <Route path="/hello" render={() => <HelloWorld greeting="Friend" />} />
-          </Switch>
-        </BrowserRouter>
-      </Provider>
-    );
-  }
-}
+const App = () => (
+  <Provider store={store}>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" render={() => ('Home!')} />
+        <Route path="/hello" render={() => <HelloWorld />} />
+      </Switch>
+    </BrowserRouter>
+  </Provider>
+);
 
 export default App;
