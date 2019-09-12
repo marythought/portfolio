@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import ThingsReducer from './things';
+import CommonplacesReducer from './commonplaces';
 
 const rootReducer = combineReducers({
-  things: ThingsReducer,
+  commonplaces: CommonplacesReducer,
 });
 
 export default rootReducer;

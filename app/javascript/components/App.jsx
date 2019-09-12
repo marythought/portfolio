@@ -2,7 +2,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import HelloWorld from './HelloWorld';
+import Commonplaces from './Commonplaces';
 import configureStore from '../configureStore';
 
 const store = configureStore();
@@ -12,7 +12,7 @@ const App = () => (
     <BrowserRouter>
       <Switch>
         <Route exact path="/" render={() => ('Home!')} />
-        <Route path="/hello" render={() => <HelloWorld />} />
+        <Route path="/commonplaces" render={() => <Commonplaces />} />
       </Switch>
     </BrowserRouter>
   </Provider>

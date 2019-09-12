@@ -1,1 +1,1 @@
-export { getThings, getThingsSuccess } from './things';
+export { getCommonplaces, getCommonplacesSuccess } from './commonplaces';

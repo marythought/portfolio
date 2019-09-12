@@ -16,7 +16,10 @@ Rails.application.routes.draw do
     !req.xhr? && req.format.html?
   end
 
-  namespace :v1, defaults: { format: 'json' } do
-    get 'api', to: 'api#index'
+  namespace :api, defaults: { format: 'json' } do
+    namespace :v1 do
+      # resources :commonplaces
+      get 'commonplaces', to: 'commonplaces#index'
+    end
   end
 end

@@ -3,10 +3,12 @@ import thunk from 'redux-thunk';
 import rootReducer from './reducers';
 
 const initialState = {
-  things: [
+  commonplaces: [
     {
-      name: 'test',
-      guid: '123',
+      author: 'test author',
+      url: 'http://www.google.com',
+      notes: 'some notes',
+      quote: 'test quote',
     },
   ],
 };
