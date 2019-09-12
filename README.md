@@ -31,6 +31,7 @@ Since first launching this site I have upgraded it from Rails 4 to Rails 5.3.
 - Add email contact form
 - Add comments to projects
 - Finish and add React/Redux calendar
+  - https://www.freecodecamp.org/news/how-to-create-a-rails-project-with-a-react-and-redux-front-end-8b01e17a1db/
 - Add developer philosophy / guiding principals to about me
 
 ## Author

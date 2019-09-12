@@ -13,7 +13,6 @@
 //= require jquery
 //= require article
 //= require news
-//= require jquery_ujs
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks

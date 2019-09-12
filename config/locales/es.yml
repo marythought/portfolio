@@ -28,6 +28,7 @@ es:
     resume: Resumen
     news: Noticias Tecnológicas
     title: Mary Dickson Diaz - Portafolio
+    home: Casa
   projects:
     show:
       app_link: 'Link to app:'

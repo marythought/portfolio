@@ -59,6 +59,7 @@ en:
     resume: Resume
     news: Tech News
     title: Mary Dickson Diaz - Portfolio
+    home: Home
   projects:
     show:
       app_link: 'Link to app:'

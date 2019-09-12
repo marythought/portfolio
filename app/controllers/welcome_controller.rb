@@ -11,5 +11,5 @@ class WelcomeController < ApplicationController
 
   def news; end
 
-  def calendar; end
+  def index; end
 end
