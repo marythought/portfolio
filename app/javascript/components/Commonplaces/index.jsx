@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { List } from 'semantic-ui-react';
-import { getCommonplaces } from '../actions';
+import { getCommonplaces } from '../../actions';
 
 // eslint-disable-next-line no-shadow
 const Commonplaces = ({ commonplaces, getCommonplaces }) => {
@@ -17,13 +17,13 @@ const Commonplaces = ({ commonplaces, getCommonplaces }) => {
       </List.Content>
     </List.Item>
   ));
-
   return (
-    <>
+    <div className="large-8 columns bottom-margin">
+      <h1>A Commonplace Book</h1>
       <button type="submit" className="getCommonplacesBtn" onClick={() => getCommonplaces()}>load commonplaces</button>
       <br />
-      <List>{ commonplacesList }</List>
-    </>
+      <List>{commonplacesList}</List>
+    </div>
   );
 };
 
@@ -52,7 +52,7 @@ Commonplaces.defaultProps = {
     quote: '',
     url: '',
   }],
-  getCommonplaces: () => {},
+  getCommonplaces: () => { },
 };
 
 export default connect(structuredSelector, mapDispatchToProps)(Commonplaces);

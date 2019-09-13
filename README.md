@@ -29,7 +29,6 @@ Since first launching this site I have upgraded it from Rails 4 to Rails 5.3.
 
 - Beef up Tests
   - [build a restful json api with rails 5 tutorial with rspec](https://scotch.io/tutorials/build-a-restful-json-api-with-rails-5-part-one)
-- Add dev db seeds
 - [set up heroku deploy script](https://mentalized.net/journal/2017/04/22/run-rails-migrations-on-heroku-deploy/)
 - Add info about the Go API to that page (copy the ReadMe, basically)
 - Finish and add React/Redux commonplace book feature

@@ -3,14 +3,7 @@ import thunk from 'redux-thunk';
 import rootReducer from './reducers';
 
 const initialState = {
-  commonplaces: [
-    {
-      author: 'test author',
-      url: 'http://www.google.com',
-      notes: 'some notes',
-      quote: 'test quote',
-    },
-  ],
+  commonplaces: [],
 };
 
 export default function configureStore() {
