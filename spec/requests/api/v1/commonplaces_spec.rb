@@ -22,34 +22,6 @@ RSpec.describe 'Commonplaces API', type: :request do
     end
   end
 
-  # # Test suite for GET /commonplaces/:id
-  # describe 'GET /commonplaces/:id' do
-  #   before { get "/commonplaces/#{commonplace_id}" }
-
-  #   context 'when the record exists' do
-  #     it 'returns the commonplace' do
-  #       expect(json).not_to be_empty
-  #       expect(json['id']).to eq(commonplace_id)
-  #     end
-
-  #     it 'returns status code 200' do
-  #       expect(response).to have_http_status(200)
-  #     end
-  #   end
-
-  #   context 'when the record does not exist' do
-  #     let(:commonplace_id) { 100 }
-
-  #     it 'returns status code 404' do
-  #       expect(response).to have_http_status(404)
-  #     end
-
-  #     it 'returns a not found message' do
-  #       expect(response.body).to match(/Couldn't find commonplace/)
-  #     end
-  #   end
-  # end
-
   # # Test suite for POST /commonplaces
   # describe 'POST /commonplaces' do
   #   # valid payload

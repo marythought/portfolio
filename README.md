@@ -37,6 +37,7 @@ Since first launching this site I have upgraded it from Rails 4 to Rails 5.3.
   - Explain what a [commonplace book is](https://en.wikipedia.org/wiki/Commonplace_book)
   - [clean up the data fetch](https://blog.logrocket.com/patterns-for-data-fetching-in-react-981ced7e5c56/)
   - clean up the formatting
+  - clean up welcome page
   - Admin can add links, automatically published
   - Admin can add existing categories
   - Admin can add a new category
