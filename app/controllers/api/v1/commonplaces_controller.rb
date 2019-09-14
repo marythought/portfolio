@@ -17,7 +17,7 @@ module Api
       private
 
       def permitted_params
-        @params = params.require(:commonplace).permit(:quote, :url, :author, :notes)
+        @params = params.require(:commonplace).permit(:quote, :url, :source, :notes)
       end
     end
   end

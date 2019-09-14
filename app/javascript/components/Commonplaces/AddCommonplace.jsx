@@ -3,16 +3,16 @@ import CommonplaceForm from './CommonplaceForm';
 
 const commonplaceCreated = (response, props, setSubmitting) => {
   setSubmitting(false);
-  // TODO: clear the form
+  // TODO: clear the form and re-render the CommonplacesList
 };
 
 const submit = (values) => {
   const {
-    author, url, quote, notes,
+    source, url, quote, notes,
   } = values;
   const body = JSON.stringify({
     commonplace: {
-      author,
+      source,
       url,
       quote,
       notes,
@@ -29,7 +29,7 @@ const submit = (values) => {
 
 export default withFormik({
   mapPropsToValues: (props) => ({
-    author: props.author,
+    source: props.source,
     notes: props.notes,
     url: props.url,
     quote: props.quote,

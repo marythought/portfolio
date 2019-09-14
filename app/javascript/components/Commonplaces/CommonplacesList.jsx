@@ -23,7 +23,7 @@ export default class CommonplacesList extends React.Component {
         <List.Content>
           <List.Header as="a" href={commonplace.url}>{commonplace.quote}</List.Header>
           <List.Description>{commonplace.notes}</List.Description>
-          <List.Description>{commonplace.author}</List.Description>
+          <List.Description>{commonplace.source}</List.Description>
         </List.Content>
       </List.Item>
     ));

@@ -1,7 +1,7 @@
 class CreateCommonplaces < ActiveRecord::Migration[5.2]
   def change
     create_table :commonplaces do |t|
-      t.string :author
+      t.string :source
       t.string :notes
       t.text :quote
       t.string :url

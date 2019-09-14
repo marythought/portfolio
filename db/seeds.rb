@@ -19,7 +19,7 @@ Commonplace.destroy_all
 
 20.times do
   cp = Commonplace.create!(
-    author: Faker::Name.name,
+    source: Faker::Name.name,
     notes: Faker::Lorem.paragraph,
     published_at: Faker::Date.between(from: 2.days.ago, to: Date.today),
     quote: Faker::Lorem.paragraph,
@@ -34,7 +34,7 @@ end
 # and some unpublished (pending)
 20.times do
   cp = Commonplace.create!(
-    author: Faker::Name.name,
+    source: Faker::Name.name,
     notes: Faker::Lorem.paragraph,
     quote: Faker::Lorem.paragraph,
     url: Faker::Internet.url

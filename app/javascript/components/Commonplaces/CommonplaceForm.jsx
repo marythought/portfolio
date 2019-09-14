@@ -20,9 +20,9 @@ export default class CommonplaceForm extends React.Component {
     } = this.props;
     return (
       <form onSubmit={handleSubmit}>
-        <label htmlFor="author">
-          Author:
-          <input name="author" type="text" value={values.author} onChange={this.handleInputChange} />
+        <label htmlFor="source">
+          Source:
+          <input name="source" type="text" value={values.source} onChange={this.handleInputChange} />
         </label>
         <br />
         <label htmlFor="quote">
@@ -50,7 +50,7 @@ CommonplaceForm.propTypes = {
   setFieldValue: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   values: PropTypes.shape({
-    author: PropTypes.string,
+    source: PropTypes.string,
     url: PropTypes.string,
     notes: PropTypes.string,
     quote: PropTypes.string,
@@ -59,7 +59,7 @@ CommonplaceForm.propTypes = {
 
 CommonplaceForm.defaultProps = {
   values: {
-    author: '',
+    source: '',
     url: '',
     notes: '',
     quote: '',

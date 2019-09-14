@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2019_09_12_205447) do
   end
 
   create_table "commonplaces", force: :cascade do |t|
-    t.string "author"
+    t.string "source"
     t.string "notes"
     t.text "quote"
     t.string "url"
