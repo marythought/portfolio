@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       # resources :commonplaces
       get 'commonplaces', to: 'commonplaces#index'
+      post 'commonplaces', to: 'commonplaces#create'
     end
   end
 end

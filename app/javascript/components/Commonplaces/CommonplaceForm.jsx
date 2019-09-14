@@ -5,75 +5,63 @@ export default class CommonplaceForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleAuthorChange = this.handleAuthorChange.bind(this);
-    this.handleNotesChange = this.handleNotesChange.bind(this);
-    this.handleUrlChange = this.handleUrlChange.bind(this);
-    this.handleQuoteChange = this.handleQuoteChange.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   handleInputChange(event) {
     const { setFieldValue } = this.props;
-
-    const { target } = event.target;
-    const { value } = target.value;
-    const { name } = target.name;
-
-    this.setState({
-      [name]: value
-    });
-
-    setFieldValue(name, value)
-  }
-
-  handleAuthorChange(event) {
-    const { setFieldValue, updateValues } = this.props;
-    setFieldValue('author', event.target.value)
-  }
-
-  handleUrlChange(event) {
-    const { setFieldValue, updateValues } = this.props;
-    setFieldValue('url', event.target.value)
-  }
-
-  handleNotesChange(event) {
-    const { setFieldValue, updateValues } = this.props;
-    setFieldValue('notes', event.target.value)
-  }
-
-  handleQuoteChange(event) {
-    const { setFieldValue, updateValues } = this.props;
-    setFieldValue('quote', event.target.value)
+    const { value, name } = event.target;
+    setFieldValue(name, value);
   }
 
   render() {
     const {
-      values, setFieldValue, handleSubmit,
+      values, handleSubmit,
     } = this.props;
-    console.log(values)
     return (
       <form onSubmit={handleSubmit}>
-        <label htmlFor="something">
+        <label htmlFor="author">
           Author:
-          <input type="text" value={values.author} onChange={this.handleAuthorChange} />
+          <input name="author" type="text" value={values.author} onChange={this.handleInputChange} />
         </label>
-        <br></br>
-        <label htmlFor="something">
+        <br />
+        <label htmlFor="quote">
           Quote:
-          <input type="text" value={values.quote} onChange={this.handleQuoteChange} />
+          <textarea name="quote" value={values.quote} onChange={this.handleInputChange} />
         </label>
-        <br></br>
-        <label htmlFor="something">
+        <br />
+        <label htmlFor="url">
           URL:
-          <input type="text" value={values.url} onChange={this.handleUrlChange} />
+          <input name="url" type="text" value={values.url} onChange={this.handleInputChange} />
         </label>
-        <br></br>
-        <label htmlFor="something">
+        <br />
+        <label htmlFor="notes">
           Notes:
-          <textarea value={values.notes} onChange={this.handleNotesChange} />
+          <textarea name="notes" value={values.notes} onChange={this.handleInputChange} />
         </label>
-        <br></br>
+        <br />
         <input type="submit" value="Submit" />
       </form>
     );
   }
 }
+
+CommonplaceForm.propTypes = {
+  setFieldValue: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  values: PropTypes.shape({
+    author: PropTypes.string,
+    url: PropTypes.string,
+    notes: PropTypes.string,
+    quote: PropTypes.string,
+  }),
+};
+
+CommonplaceForm.defaultProps = {
+  values: {
+    author: '',
+    url: '',
+    notes: '',
+    quote: '',
+  },
+};

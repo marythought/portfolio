@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
   def index
-    @props = { commonplaces: Commonplace.all }
+    @props = { admin: current_user.try(:admin?) }
   end
 
   def about; end

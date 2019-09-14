@@ -3,7 +3,28 @@ import CommonplaceForm from './CommonplaceForm';
 
 const commonplaceCreated = (response, props, setSubmitting) => {
   setSubmitting(false);
-  props.onCancel();
+  // TODO: clear the form
+};
+
+const submit = (values) => {
+  const {
+    author, url, quote, notes,
+  } = values;
+  const body = JSON.stringify({
+    commonplace: {
+      author,
+      url,
+      quote,
+      notes,
+    },
+  });
+  return fetch('/api/v1/commonplaces', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body,
+  });
 };
 
 export default withFormik({
@@ -26,7 +47,7 @@ export default withFormik({
   //   trackTime: yup.boolean(),
   // }),
   handleSubmit: (values, { props, setSubmitting }) => {
-    props.onSubmit(values).then(
+    submit(values).then(
       (response) => commonplaceCreated(response, props, setSubmitting),
     );
   },
