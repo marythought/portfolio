@@ -6,6 +6,10 @@
 
 **Project Portfolio** This is a Rails app designed to showcase my work as a software engineer.
 
+## Developing
+
+- rails generate react:component [name]
+
 ## Deploying
 
 - rails assets:clobber
@@ -20,7 +24,6 @@
 - [set up heroku deploy script](https://mentalized.net/journal/2017/04/22/run-rails-migrations-on-heroku-deploy/)
 - Finish and add React/Redux commonplace book feature
   - [free code camp rails with react tutorial](https://www.freecodecamp.org/news/how-to-create-a-rails-project-with-a-react-and-redux-front-end-8b01e17a1db/)
-  - Explain what a [commonplace book is](https://en.wikipedia.org/wiki/Commonplace_book)
   - [clean up the data fetch](https://blog.logrocket.com/patterns-for-data-fetching-in-react-981ced7e5c56/)
   - clean up the formatting
   - Admin can add links, automatically published

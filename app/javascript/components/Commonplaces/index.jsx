@@ -1,37 +1,49 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
 import { List } from 'semantic-ui-react';
-import { getCommonplaces } from '../../actions';
+import text from './text';
+import AddCommonplace from './AddCommonplace';
 
-// eslint-disable-next-line no-shadow
-const Commonplaces = ({ commonplaces, getCommonplaces }) => {
-  const commonplacesList = commonplaces.map((commonplace) => (
-    <List.Item>
-      <List.Icon name="arrow circle right" size="large" verticalAlign="middle" />
-      <List.Content>
-        <List.Header as="a" href={commonplace.url}>{commonplace.quote}</List.Header>
-        <List.Description>{commonplace.notes}</List.Description>
-        <List.Description>{commonplace.author}</List.Description>
-      </List.Content>
-    </List.Item>
-  ));
-  return (
-    <div className="large-8 columns bottom-margin">
-      <h1>A Commonplace Book</h1>
-      <button type="submit" className="getCommonplacesBtn" onClick={() => getCommonplaces()}>load commonplaces</button>
-      <br />
-      <List>{commonplacesList}</List>
-    </div>
-  );
-};
+export default class Commonplaces extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+  }
 
-const structuredSelector = createStructuredSelector({
-  commonplaces: (state) => state.commonplaces,
-});
+  commonplacesList() {
+    const { commonplaces } = this.props;
 
-const mapDispatchToProps = { getCommonplaces };
+    return (
+      commonplaces.map((commonplace) => (
+        <List.Item key={commonplace.id}>
+          <List.Icon name="arrow circle right" size="large" verticalAlign="middle" />
+          <List.Content>
+            <List.Header as="a" href={commonplace.url}>{commonplace.quote}</List.Header>
+            <List.Description>{commonplace.notes}</List.Description>
+            <List.Description>{commonplace.author}</List.Description>
+          </List.Content>
+        </List.Item>
+      ))
+    )
+  }
+
+  render() {
+    return (
+      <div className="large-8 columns bottom-margin">
+        <h1>A Commonplace Book</h1>
+        <p>{text}</p>
+        <p>
+          From
+          <a href="https://en.wikipedia.org/wiki/Commonplace_book"> Wikipedia</a>
+          : &quot;Each one is unique to its creator&apos;s particular interests but they almost always include passages found in other texts, sometimes accompanied by the compiler&apos;s responses.&quot;
+        </p>
+        <AddCommonplace />
+        <List>{this.commonplacesList()}</List>
+      </div>
+    );
+  }
+}
 
 Commonplaces.propTypes = {
   commonplaces: PropTypes.arrayOf(
@@ -42,7 +54,6 @@ Commonplaces.propTypes = {
       url: PropTypes.string,
     }),
   ),
-  getCommonplaces: PropTypes.func,
 };
 
 Commonplaces.defaultProps = {
@@ -52,7 +63,4 @@ Commonplaces.defaultProps = {
     quote: '',
     url: '',
   }],
-  getCommonplaces: () => { },
 };
-
-export default connect(structuredSelector, mapDispatchToProps)(Commonplaces);

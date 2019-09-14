@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
   def index
-    @title = 'Mary Dickson Diaz - Portfolio'
+    @props = { commonplaces: Commonplace.all }
   end
 
   def about; end
@@ -10,6 +10,4 @@ class WelcomeController < ApplicationController
   def blog; end
 
   def news; end
-
-  def index; end
 end

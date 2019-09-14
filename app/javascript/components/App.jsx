@@ -1,22 +1,26 @@
-
 import React from 'react';
+import PropTypes from 'prop-types';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { Provider } from 'react-redux';
 import Commonplaces from './Commonplaces/index';
 import Home from './Home/index';
-import configureStore from '../configureStore';
 
-const store = configureStore();
-
-const App = () => (
-  <Provider store={store}>
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/" render={() => <Home />} />
-        <Route path="/commonplaces" render={() => <Commonplaces />} />
-      </Switch>
-    </BrowserRouter>
-  </Provider>
+const App = (props) => (
+  <BrowserRouter>
+    <Switch>
+      <Route exact path="/" render={() => <Home />} />
+      <Route path="/commonplaces" render={() => <Commonplaces commonplaces={props.commonplaces} />} />
+    </Switch>
+  </BrowserRouter>
 );
 
 export default App;
+
+App.propTypes = {
+  commonplaces: PropTypes.arrayOf(
+    PropTypes.shape,
+  ),
+};
+
+App.defaultProps = {
+  commonplaces: [],
+};
