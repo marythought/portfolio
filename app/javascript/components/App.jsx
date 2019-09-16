@@ -4,11 +4,13 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Commonplaces from './Commonplaces/index';
 import Home from './Home/index';
 
-const App = (props) => (
+const App = (
+  props,
+) => (
   <BrowserRouter>
     <Switch>
       <Route exact path="/" render={() => <Home />} />
-      <Route path="/commonplaces" render={() => <Commonplaces commonplaces={props.commonplaces} />} />
+      <Route path="/commonplaces" render={() => <Commonplaces admin={props.admin} />} />
     </Switch>
   </BrowserRouter>
 );
@@ -16,11 +18,9 @@ const App = (props) => (
 export default App;
 
 App.propTypes = {
-  commonplaces: PropTypes.arrayOf(
-    PropTypes.shape,
-  ),
+  admin: PropTypes.bool,
 };
 
 App.defaultProps = {
-  commonplaces: [],
+  admin: false,
 };

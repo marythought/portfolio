@@ -12,7 +12,9 @@ export default class CommonplacesList extends React.Component {
   componentDidMount() {
     fetch('/api/v1/commonplaces')
       .then((response) => response.json())
-      .then((data) => { this.setState({ commonplaces: data }); });
+      .then((data) => {
+        this.setState({ commonplaces: data });
+      });
   }
 
   render() {

@@ -16,37 +16,41 @@ export default class CommonplaceForm extends React.Component {
 
   render() {
     const {
-      values, handleSubmit,
+      admin, values, handleSubmit,
     } = this.props;
-    return (
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="source">
-          Source:
-          <input name="source" type="text" value={values.source} onChange={this.handleInputChange} />
-        </label>
-        <br />
-        <label htmlFor="quote">
-          Quote:
-          <textarea name="quote" value={values.quote} onChange={this.handleInputChange} />
-        </label>
-        <br />
-        <label htmlFor="url">
-          URL:
-          <input name="url" type="text" value={values.url} onChange={this.handleInputChange} />
-        </label>
-        <br />
-        <label htmlFor="notes">
-          Notes:
-          <textarea name="notes" value={values.notes} onChange={this.handleInputChange} />
-        </label>
-        <br />
-        <input type="submit" value="Submit" />
-      </form>
-    );
+    if (admin) {
+      return (
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="source">
+            Source:
+            <input name="source" type="text" value={values.source} onChange={this.handleInputChange} />
+          </label>
+          <br />
+          <label htmlFor="quote">
+            Quote:
+            <textarea name="quote" value={values.quote} onChange={this.handleInputChange} />
+          </label>
+          <br />
+          <label htmlFor="url">
+            URL:
+            <input name="url" type="text" value={values.url} onChange={this.handleInputChange} />
+          </label>
+          <br />
+          <label htmlFor="notes">
+            Notes:
+            <textarea name="notes" value={values.notes} onChange={this.handleInputChange} />
+          </label>
+          <br />
+          <input type="submit" value="Submit" />
+        </form>
+      );
+    }
+    return null;
   }
 }
 
 CommonplaceForm.propTypes = {
+  admin: PropTypes.bool,
   setFieldValue: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   values: PropTypes.shape({
@@ -58,6 +62,7 @@ CommonplaceForm.propTypes = {
 };
 
 CommonplaceForm.defaultProps = {
+  admin: false,
   values: {
     source: '',
     url: '',
