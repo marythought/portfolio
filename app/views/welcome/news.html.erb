@@ -3,7 +3,9 @@
   <div class='large-12 columns'>
     <div class='row'>
       <div class='large-12 columns'>
-        <h1><%= t('.title') %></h1>
+        <div id='readme'>
+          <%= render 'newsy' %>
+        </div>
         <button class='btn btn-primary' onclick='newsRefresh()'>Refresh</button>
         <img src='<%= asset_path 'Loading_icon.gif' %>' class='spinner'>
         <ul id='news-list'>
