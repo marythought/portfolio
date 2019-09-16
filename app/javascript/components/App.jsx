@@ -1,21 +1,26 @@
-
 import React from 'react';
+import PropTypes from 'prop-types';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import HelloWorld from './HelloWorld';
-import configureStore from '../configureStore';
+import Commonplaces from './Commonplaces/index';
+import Home from './Home/index';
 
-const store = configureStore();
-
-const App = () => (
-  <Provider store={store}>
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/" render={() => ('Home!')} />
-        <Route path="/hello" render={() => <HelloWorld />} />
-      </Switch>
-    </BrowserRouter>
-  </Provider>
+const App = (
+  props,
+) => (
+  <BrowserRouter>
+    <Switch>
+      <Route exact path="/" render={() => <Home />} />
+      <Route path="/commonplaces" render={() => <Commonplaces admin={props.admin} />} />
+    </Switch>
+  </BrowserRouter>
 );
 
 export default App;
+
+App.propTypes = {
+  admin: PropTypes.bool,
+};
+
+App.defaultProps = {
+  admin: false,
+};
