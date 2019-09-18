@@ -11,6 +11,10 @@ export default class Body extends React.Component {
     };
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.addNewCommonplace = this.addNewCommonplace.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+    this.deleteCommonplace = this.deleteCommonplace.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
+    this.updateCommonplace = this.updateCommonplace.bind(this)
   }
 
   componentDidMount() {
@@ -28,7 +32,7 @@ export default class Body extends React.Component {
         url: formFields.url.value,
         notes: formFields.notes.value,
         quote: formFields.quote.value,
-      }
+      },
     });
     fetch('/api/v1/commonplaces', {
       method: 'POST',
@@ -36,15 +40,57 @@ export default class Body extends React.Component {
         'Content-Type': 'application/json',
       },
       body,
-    }).then((response) => { return response.json() })
+    }).then((response) => { return response.json(); })
       .then((commonplace) => {
-        this.addNewCommonplace(commonplace)
+        this.addNewCommonplace(commonplace);
       });
   }
 
-  addNewCommonplace(cpl) {
+  handleDelete(id) {
+    fetch(`/api/v1/commonplaces/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }).then(() => {
+      this.deleteCommonplace(id);
+    });
+  }
+
+  deleteCommonplace(id) {
+    const { commonplaces } = this.state;
+    const newCommonplaces = commonplaces.filter((commonplace) => commonplace.id !== id);
     this.setState({
-      commonplaces: [cpl].concat(this.state.commonplaces),
+      commonplaces: newCommonplaces,
+    });
+  }
+
+  handleUpdate(commonplace) {
+    fetch(`/api/v1/commonplaces/${commonplace.id}`, {
+      method: 'PUT',
+      body: JSON.stringify({ commonplace }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }).then(() => {
+      this.updateCommonplace(commonplace);
+    });
+  }
+
+  updateCommonplace(commonplace) {
+    const { commonplaces } = this.state;
+    const newCommonplaces = commonplaces.filter((f) => f.id !== commonplace.id);
+    newCommonplaces.push(commonplace);
+    // TODO: re-order by created by date
+    this.setState({
+      commonplaces: newCommonplaces,
+    });
+  }
+
+  addNewCommonplace(cpl) {
+    const { commonplaces } = this.state;
+    this.setState({
+      commonplaces: [cpl].concat(commonplaces),
     });
   }
 
@@ -57,7 +103,7 @@ export default class Body extends React.Component {
           admin={admin}
           handleFormSubmit={this.handleFormSubmit}
         />
-        <CommonplacesList commonplaces={commonplaces} />
+        <CommonplacesList commonplaces={commonplaces} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} />
       </div>
     );
   }
