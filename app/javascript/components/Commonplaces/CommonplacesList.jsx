@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { List } from 'semantic-ui-react';
 
-const CommonplacesList = (
-  props,
-) => {
+const CommonplacesList = (props) => {
   const { commonplaces } = props;
   if (commonplaces && commonplaces.length) {
     const list = commonplaces.map((commonplace) => (
