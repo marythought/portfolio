@@ -57,12 +57,10 @@ export default class Commonplace extends React.Component {
         <List.Content>
           <LinkedQuote url={commonplace.url} quote={commonplace.quote} />
           <List.Description>
-            Source:&nbsp;
-            {commonplace.source}
+            {commonplace.source ? `Source: ${commonplace.source}` : '' }
           </List.Description>
           <List.Description>
-            Notes:&nbsp;
-            {commonplace.notes}
+            {commonplace.notes ? `Notes: ${commonplace.notes}` : ''}
           </List.Description>
         </List.Content>
         <Button admin={admin} onClick={() => this.handleEdit()} text="Edit" />

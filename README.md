@@ -26,7 +26,6 @@
   - V2: CRUD
     - clean up the CSS/formatting
       - form spacing, make bigger text boxes
-      - space out the text
     - automatically publish admin links
     - only display published records
   - V3: Categories
