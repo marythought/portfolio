@@ -103,7 +103,12 @@ export default class Body extends React.Component {
           admin={admin}
           handleFormSubmit={this.handleFormSubmit}
         />
-        <CommonplacesList commonplaces={commonplaces} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} />
+        <CommonplacesList
+          admin={admin}
+          commonplaces={commonplaces}
+          handleDelete={this.handleDelete}
+          handleUpdate={this.handleUpdate}
+        />
       </div>
     );
   }

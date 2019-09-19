@@ -29,8 +29,6 @@
       - space out the text
     - automatically publish admin links
     - only display published records
-    - add edit
-    - add delete
   - V3: Categories
     - add categories to display
     - Admin can add existing categories

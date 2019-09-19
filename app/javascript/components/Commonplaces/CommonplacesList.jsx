@@ -4,10 +4,11 @@ import { List } from 'semantic-ui-react';
 import Commonplace from './Commonplace';
 
 const CommonplacesList = (props) => {
-  const { commonplaces, handleDelete, handleUpdate } = props;
+  const { admin, commonplaces, handleDelete, handleUpdate } = props;
   if (commonplaces && commonplaces.length) {
     const list = commonplaces.map((commonplace) => (
       <Commonplace
+        admin={admin}
         commonplace={commonplace}
         handleDelete={handleDelete}
         handleUpdate={handleUpdate}
@@ -25,6 +26,7 @@ const CommonplacesList = (props) => {
 export default CommonplacesList;
 
 CommonplacesList.propTypes = {
+  admin: PropTypes.bool.isRequired,
   commonplaces: PropTypes.array.isRequired,
   handleDelete: PropTypes.func.isRequired,
   handleUpdate: PropTypes.func.isRequired,

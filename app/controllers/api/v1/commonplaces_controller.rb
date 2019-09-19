@@ -19,6 +19,7 @@ module Api
 
       def update
         commonplace = Commonplace.find(params[:id])
+        commonplace.published_at = Time.now if params[:publish]
         commonplace.update_attributes(permitted_params)
         render json: commonplace
       end
@@ -26,7 +27,7 @@ module Api
       private
 
       def permitted_params
-        params.require(:commonplace).permit(:quote, :url, :source, :notes)
+        params.require(:commonplace).permit(:quote, :url, :source, :notes, :publish)
       end
     end
   end

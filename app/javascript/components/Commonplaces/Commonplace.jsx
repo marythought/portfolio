@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { List } from 'semantic-ui-react';
+import Button from '../Button';
 
 export default class Commonplace extends React.Component {
   constructor(props) {
@@ -31,7 +32,7 @@ export default class Commonplace extends React.Component {
   }
 
   render() {
-    const { commonplace, handleDelete } = this.props;
+    const { admin, commonplace, handleDelete } = this.props;
     const { editable } = this.state;
 
     if (editable) {
@@ -45,7 +46,7 @@ export default class Commonplace extends React.Component {
           <input type="text" ref={(input) => { this.url = input; }} defaultValue={commonplace.url} />
           Notes
           <input type="text" ref={(input) => { this.notes = input; }} defaultValue={commonplace.notes} />
-          <button type="submit" onClick={() => this.handleEdit()}>Submit</button>
+          <Button admin={admin} onClick={() => this.handleEdit()} text="Submit" />
         </>
       );
     }
@@ -63,14 +64,15 @@ export default class Commonplace extends React.Component {
             {commonplace.notes}
           </List.Description>
         </List.Content>
-        <button type="submit" onClick={() => this.handleEdit()}>Edit</button>
-        <button type="submit" onClick={() => handleDelete(commonplace.id)}>Delete</button>
+        <Button admin={admin} onClick={() => this.handleEdit()} text="Edit" />
+        <Button admin={admin} onClick={() => handleDelete(commonplace.id)} text="Delete" />
       </List.Item>
     );
   }
 }
 
 Commonplace.propTypes = {
+  admin: PropTypes.bool,
   commonplace: PropTypes.shape({
     id: PropTypes.number,
     source: PropTypes.string,
@@ -83,6 +85,7 @@ Commonplace.propTypes = {
 };
 
 Commonplace.defaultProps = {
+  admin: false,
   commonplace: {
     id: '',
     source: '',
