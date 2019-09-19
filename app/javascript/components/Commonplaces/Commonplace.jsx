@@ -22,8 +22,9 @@ export default class Commonplace extends React.Component {
       const quote = this.quote.value;
       const notes = this.notes.value;
       const { id } = commonplace;
+      const publish = true;
       const newCommonplace = {
-        id, source, quote, url, notes,
+        id, source, quote, url, notes, publish,
       };
       handleUpdate(newCommonplace);
     }
@@ -47,6 +48,16 @@ export default class Commonplace extends React.Component {
           <input type="text" ref={(input) => { this.url = input; }} defaultValue={commonplace.url} />
           Notes
           <input type="text" ref={(input) => { this.notes = input; }} defaultValue={commonplace.notes} />
+          {/* <div>
+            <input type="radio" id="published" name="publish" value={true} >
+              <label for="published">Publish</label>
+            </input>
+          </div>
+          <div>
+            <input type="radio" id="unpublished" name="publish" value={false}>
+              <label for="published">Unpublish</label>
+            </input>
+          </div> */}
           <Button admin={admin} onClick={() => this.handleEdit()} text="Submit" />
         </>
       );

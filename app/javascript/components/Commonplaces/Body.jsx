@@ -26,12 +26,14 @@ export default class Body extends React.Component {
   }
 
   handleFormSubmit(formFields) {
+    const { admin } = this.props;
     const body = JSON.stringify({
       commonplace: {
         source: formFields.source.value,
         url: formFields.url.value,
         notes: formFields.notes.value,
         quote: formFields.quote.value,
+        publish: admin,
       },
     });
     fetch('/api/v1/commonplaces', {
@@ -40,7 +42,7 @@ export default class Body extends React.Component {
         'Content-Type': 'application/json',
       },
       body,
-    }).then((response) => { return response.json(); })
+    }).then((response) => response.json())
       .then((commonplace) => {
         this.addNewCommonplace(commonplace);
       });
