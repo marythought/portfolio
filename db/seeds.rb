@@ -20,9 +20,9 @@ Commonplace.destroy_all
 20.times do
   cp = Commonplace.create!(
     source: Faker::Name.name,
-    notes: Faker::Lorem.paragraph,
+    notes: Faker::Lorem.paragraph(random_sentences_to_add: 10),
     published_at: Faker::Date.between(from: 2.days.ago, to: Date.today),
-    quote: Faker::Lorem.paragraph,
+    quote: Faker::Lorem.paragraph(random_sentences_to_add: 20),
     url: Faker::Internet.url
   )
 

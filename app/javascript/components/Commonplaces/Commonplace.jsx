@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { List } from 'semantic-ui-react';
 import Button from '../Button';
+import LinkedQuote from './LinkedQuote';
 
 export default class Commonplace extends React.Component {
   constructor(props) {
@@ -54,7 +55,7 @@ export default class Commonplace extends React.Component {
       <List.Item key={commonplace.id}>
         <List.Icon name="thumbtack" size="large" verticalAlign="middle" />
         <List.Content>
-          <List.Header as="a" href={commonplace.url}>{commonplace.quote}</List.Header>
+          <LinkedQuote url={commonplace.url} quote={commonplace.quote} />
           <List.Description>
             Source:&nbsp;
             {commonplace.source}

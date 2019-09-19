@@ -5,7 +5,6 @@ const Button = (
   props,
 ) => {
   const { admin, onClick, text } = props;
-  // console.log(props)
   if (admin) {
     return <button type="submit" onClick={onClick}>{text}</button>;
   }
