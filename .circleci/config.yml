@@ -17,15 +17,35 @@ jobs:
           POSTGRES_USER: portfolio
           POSTGRES_DB: portfolio_test
           POSTGRES_PASSWORD: ""
-  steps:
-    - checkout
-    # Setup the environment
-    - run: cp .sample.env .env
+    steps:
+      - checkout
 
-    - run: dockerize -wait tcp://localhost:5432 -timeout 1m
+      # # Restore Cached Dependencies
+      # - type: cache-restore
+      #   name: Restore bundle cache
+      #   key: administrate-{{ checksum "Gemfile.lock" }}
 
-    # Setup the database
-    - run: bundle exec rails db:setup
+      # # Bundle install dependencies
+      # - run: bundle install --path vendor/bundle
 
-    # Run the tests
-    - run: bundle exec rake
+      # # Install Appraisal gemfiles
+      # - run: bundle exec appraisal install
+
+      # # Cache Dependencies
+      # - type: cache-save
+      #   name: Store bundle cache
+      #   key: administrate-{{ checksum "Gemfile.lock" }}
+      #   paths:
+      #     - vendor/bundle
+
+      # Setup the environment
+      - run: cp .sample.env .env
+
+      # Wait for DB
+      - run: dockerize -wait tcp://localhost:5432 -timeout 1m
+
+      # Setup the database
+      - run: bundle exec rails db:setup
+
+      # Run the tests
+      - run: bundle exec rake
