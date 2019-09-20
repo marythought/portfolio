@@ -1,5 +1,7 @@
 # Portfolio
 
+[![CircleCI](https://circleci.com/gh/marythought/portfolio/tree/master.svg?style=svg)](https://circleci.com/gh/marythought/portfolio/tree/master)
+
 [Mary Dickson Diaz portfolio](http://www.marydickson.info)
 
 ## Description
