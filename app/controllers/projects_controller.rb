@@ -39,6 +39,8 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
+    # rubocop:disable LineLength
     params.require(:project).permit(:name, :description, :technologies_used, :url, :image_url, :image, :writeup, :github)
+    # rubocop:enable LineLength
   end
 end
