@@ -18,9 +18,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: 'json' } do
     namespace :v1 do
-      # resources :commonplaces
-      get 'commonplaces', to: 'commonplaces#index'
-      post 'commonplaces', to: 'commonplaces#create'
+      resources :commonplaces, only: [:index, :create, :destroy, :update]
     end
   end
 end

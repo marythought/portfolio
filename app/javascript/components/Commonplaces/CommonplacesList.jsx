@@ -1,39 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { List } from 'semantic-ui-react';
+import Commonplace from './Commonplace';
 
-export default class CommonplacesList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      commonplaces: [],
-    };
-  }
-
-  componentDidMount() {
-    fetch('/api/v1/commonplaces')
-      .then((response) => response.json())
-      .then((data) => {
-        this.setState({ commonplaces: data });
-      });
-  }
-
-  render() {
-    const { commonplaces } = this.state;
+const CommonplacesList = (props) => {
+  const {
+    admin, commonplaces, handleDelete, handleUpdate,
+  } = props;
+  if (commonplaces && commonplaces.length) {
     const list = commonplaces.map((commonplace) => (
-      <List.Item key={commonplace.id}>
-        <List.Icon name="thumbtack" size="large" verticalAlign="middle" />
-        <List.Content>
-          <List.Header as="a" href={commonplace.url}>{commonplace.quote}</List.Header>
-          <List.Description>
-            Source:&nbsp;
-            {commonplace.source}
-          </List.Description>
-          <List.Description>
-            Notes:&nbsp;
-            {commonplace.notes}
-          </List.Description>
-        </List.Content>
-      </List.Item>
+      <Commonplace
+        admin={admin}
+        commonplace={commonplace}
+        handleDelete={handleDelete}
+        handleUpdate={handleUpdate}
+      />
     ));
     return (
       <List className="very relaxed large">
@@ -41,4 +22,22 @@ export default class CommonplacesList extends React.Component {
       </List>
     );
   }
-}
+  return null;
+};
+
+export default CommonplacesList;
+
+CommonplacesList.propTypes = {
+  admin: PropTypes.bool.isRequired,
+  commonplaces: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      source: PropTypes.string,
+      quote: PropTypes.string,
+      notes: PropTypes.string,
+      url: PropTypes.string,
+    }),
+  ).isRequired,
+  handleDelete: PropTypes.func.isRequired,
+  handleUpdate: PropTypes.func.isRequired,
+};
