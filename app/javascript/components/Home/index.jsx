@@ -14,7 +14,7 @@ const Home = () => (
       </li>
       <li>Rails Action Storage / AWS S3 integration</li>
       <li>Support for markdown view rendering</li>
-      <li>Rspec and Travis testing and continuous integration</li>
+      <li>Rspec and CircleCI testing and deployment via Heroku</li>
     </ul>
     <p>
       Since first launching this site in 2015, I have upgraded it from Rails 4 to Rails 5.3.
