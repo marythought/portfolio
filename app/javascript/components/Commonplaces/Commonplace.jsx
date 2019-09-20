@@ -21,10 +21,10 @@ export default class Commonplace extends React.Component {
       const url = this.url.value;
       const quote = this.quote.value;
       const notes = this.notes.value;
-      const { id } = commonplace;
+      const { id, created_at } = commonplace;
       const publish = true;
       const newCommonplace = {
-        id, source, quote, url, notes, publish,
+        id, source, quote, url, notes, publish, created_at
       };
       handleUpdate(newCommonplace);
     }
@@ -41,23 +41,18 @@ export default class Commonplace extends React.Component {
       return (
         <>
           Source
-          <input type="text" ref={(input) => { this.source = input; }} defaultValue={commonplace.source} />
+          <input type="text" size="100" ref={(input) => { this.source = input; }} defaultValue={commonplace.source} />
+          <br />
           Quote
-          <input type="text" ref={(input) => { this.quote = input; }} defaultValue={commonplace.quote} />
+          <input type="text" size="100" ref={(input) => { this.quote = input; }} defaultValue={commonplace.quote} />
+          <br />
           Url
-          <input type="text" ref={(input) => { this.url = input; }} defaultValue={commonplace.url} />
+          <input type="text" size="100" ref={(input) => { this.url = input; }} defaultValue={commonplace.url} />
+          <br />
           Notes
-          <input type="text" ref={(input) => { this.notes = input; }} defaultValue={commonplace.notes} />
-          {/* <div>
-            <input type="radio" id="published" name="publish" value={true} >
-              <label for="published">Publish</label>
-            </input>
-          </div>
-          <div>
-            <input type="radio" id="unpublished" name="publish" value={false}>
-              <label for="published">Unpublish</label>
-            </input>
-          </div> */}
+          <input type="text" size="100" ref={(input) => { this.notes = input; }} defaultValue={commonplace.notes} />
+          <br />
+          {/* TODO: Add an admin checkbox for publish */}
           <Button admin={admin} onClick={() => this.handleEdit()} text="Submit" />
         </>
       );
@@ -89,6 +84,7 @@ Commonplace.propTypes = {
     quote: PropTypes.string,
     notes: PropTypes.string,
     url: PropTypes.string,
+    created_at: PropTypes.string,
   }),
   handleDelete: PropTypes.func.isRequired,
   handleUpdate: PropTypes.func.isRequired,
@@ -102,5 +98,6 @@ Commonplace.defaultProps = {
     quote: '',
     notes: '',
     url: '',
+    created_at: '',
   },
 };

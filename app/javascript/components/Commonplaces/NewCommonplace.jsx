@@ -16,22 +16,25 @@ const NewCommonplace = (props) => {
       >
         <label htmlFor="source">
           Source:
-          <input ref={(input) => { formFields.source = input; }} name="source" type="text" value={values.source} />
+          <input size="50" ref={(input) => { formFields.source = input; }} name="source" type="text" value={values.source} />
         </label>
         <br />
         <label htmlFor="quote">
           Quote:
-          <textarea ref={(input) => { formFields.quote = input; }} name="quote" value={values.quote} />
+          <br />
+          <textarea rows="5" cols="50" ref={(input) => { formFields.quote = input; }} name="quote" value={values.quote} />
         </label>
         <br />
         <label htmlFor="url">
           URL:
-          <input ref={(input) => { formFields.url = input; }} name="url" type="text" value={values.url} />
+          <br />
+          <input size="50" ref={(input) => { formFields.url = input; }} name="url" type="text" value={values.url} />
         </label>
         <br />
         <label htmlFor="notes">
           Notes:
-          <textarea ref={(input) => { formFields.notes = input; }} name="notes" value={values.notes} />
+          <br />
+          <textarea rows="5" cols="50" ref={(input) => { formFields.notes = input; }} name="notes" value={values.notes} />
         </label>
         <br />
         <input type="submit" value="Submit" />

@@ -14,7 +14,7 @@ export default class Body extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
     this.deleteCommonplace = this.deleteCommonplace.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
-    this.updateCommonplace = this.updateCommonplace.bind(this)
+    this.updateCommonplace = this.updateCommonplace.bind(this);
   }
 
   componentDidMount() {
@@ -83,9 +83,11 @@ export default class Body extends React.Component {
     const { commonplaces } = this.state;
     const newCommonplaces = commonplaces.filter((f) => f.id !== commonplace.id);
     newCommonplaces.push(commonplace);
-    // TODO: re-order by created by date
+    const sorted = newCommonplaces.sort((x, y) => (
+      (new Date(y.created_at).getTime()) - (new Date(x.created_at).getTime())
+    ));
     this.setState({
-      commonplaces: newCommonplaces,
+      commonplaces: sorted,
     });
   }
 
