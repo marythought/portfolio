@@ -40,6 +40,7 @@ gem 'aws-sdk-s3', require: false
 gem 'bootsnap'
 gem 'devise'
 gem 'mini_magick'
+gem 'pg'
 gem 'railties', '>= 5.2.2.1'
 gem 'redcarpet'
 gem 'rubocop'
@@ -68,7 +69,6 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
 
