@@ -1,0 +1,31 @@
+# iOS CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/ios-migrating-from-1-2/ for more details
+# https://thoughtbot.com/blog/circleci-2-rails
+
+---
+version: 2
+jobs:
+  build:
+    working_directory: ~/portfolio
+    docker:
+      - image: circleci/ruby:2.5.1
+        environment:
+          RAILS_ENV: test
+      - image: postgres:9.5
+        environment:
+          POSTGRES_USER: portfolio
+          POSTGRES_DB: portfolio_test
+          POSTGRES_PASSWORD: ""
+  steps:
+    - checkout
+    # Setup the environment
+    - run: cp .sample.env .env
+
+    - run: dockerize -wait tcp://localhost:5432 -timeout 1m
+
+    # Setup the database
+    - run: bundle exec rails db:setup
+
+    # Run the tests
+    - run: bundle exec rake
