@@ -2,6 +2,12 @@ AllCops:
   Exclude:
     - 'bin/**/*'
     - config/initializers/devise.rb
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+    - 'db/**/*'
+    - 'db/fixtures/**/*'
+    - 'tmp/**/*'
+    - 'config/**/*'
 
 Metrics/LineLength:
   Max: 120
