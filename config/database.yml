@@ -5,6 +5,7 @@ default: &default
 
 development:
   <<: *default
+  username: portfolio
   database: portfolio_development
 
 test:
