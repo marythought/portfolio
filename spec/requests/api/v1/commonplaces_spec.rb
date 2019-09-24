@@ -22,60 +22,92 @@ RSpec.describe 'Commonplaces API', type: :request do
     end
   end
 
-  # # Test suite for POST /commonplaces
-  # describe 'POST /commonplaces' do
-  #   # valid payload
-  #   let(:valid_attributes) { { title: 'Learn Elm', created_by: '1' } }
+  # Test suite for POST /commonplaces
+  describe 'POST /commonplaces' do
+    # valid payload
+    let(:valid_attributes) do
+      {
+        commonplace: {
+          quote: 'Learn Elm',
+          notes: 'looks cool',
+          url: 'http://www.example.com',
+          source: 'Wash Post',
+          publish: true
+        }
+      }
+    end
 
-  #   context 'when the request is valid' do
-  #     before { post '/commonplaces', params: valid_attributes }
+    context 'when the request is valid' do
+      before { post '/api/v1/commonplaces', params: valid_attributes }
 
-  #     it 'creates a commonplace' do
-  #       expect(json['title']).to eq('Learn Elm')
-  #     end
+      it 'creates a commonplace' do
+        expect(json['quote']).to eq('Learn Elm')
+      end
 
-  #     it 'returns status code 201' do
-  #       expect(response).to have_http_status(201)
-  #     end
-  #   end
+      it 'returns status code 201' do
+        expect(response).to have_http_status(201)
+      end
+    end
 
-  #   context 'when the request is invalid' do
-  #     before { post '/commonplaces', params: { title: 'Foobar' } }
+    context 'when the request is invalid' do
+      before { post '/api/v1/commonplaces', params: { commonplace: { quote: '' } } }
 
-  #     it 'returns status code 422' do
-  #       expect(response).to have_http_status(422)
-  #     end
+      it 'returns status code 400' do
+        expect(response).to have_http_status(400)
+      end
+    end
+  end
 
-  #     it 'returns a validation failure message' do
-  #       expect(response.body)
-  #         .to match(/Validation failed: Created by can't be blank/)
-  #     end
-  #   end
-  # end
+  # Test suite for PUT /commonplaces/:id
+  describe 'PUT /commonplaces/:id' do
+    let(:valid_attributes) do
+      {
+        commonplace: {
+          id: commonplace_id,
+          quote: 'Learn Rails',
+          notes: 'looks cool',
+          url: 'http://www.example.com',
+          source: 'Wash Post',
+          publish: true
+        }
+      }
+    end
 
-  # # Test suite for PUT /commonplaces/:id
-  # describe 'PUT /commonplaces/:id' do
-  #   let(:valid_attributes) { { title: 'Shopping' } }
+    context 'when the record exists' do
+      before { put "/api/v1/commonplaces/#{commonplace_id}", params: valid_attributes }
 
-  #   context 'when the record exists' do
-  #     before { put "/commonplaces/#{commonplace_id}", params: valid_attributes }
+      it 'updates the record' do
+        expect(json['quote']).to eq('Learn Rails')
+      end
 
-  #     it 'updates the record' do
-  #       expect(response.body).to be_empty
-  #     end
+      it 'returns status code 200' do
+        expect(response).to have_http_status(200)
+      end
+    end
 
-  #     it 'returns status code 204' do
-  #       expect(response).to have_http_status(204)
-  #     end
-  #   end
-  # end
+    context 'when no record exists' do
+      before { put "/api/v1/commonplaces/#{commonplace_id + 100}", params: valid_attributes }
 
-  # # Test suite for DELETE /commonplaces/:id
-  # describe 'DELETE /commonplaces/:id' do
-  #   before { delete "/commonplaces/#{commonplace_id}" }
+      it 'returns 404' do
+        expect(response).to have_http_status(404)
+      end
+    end
+  end
 
-  #   it 'returns status code 204' do
-  #     expect(response).to have_http_status(204)
-  #   end
-  # end
+  # Test suite for DELETE /commonplaces/:id
+  describe 'DELETE /commonplaces/:id' do
+    before { delete "/api/v1/commonplaces/#{commonplace_id}" }
+
+    it 'returns status code 204' do
+      expect(response).to have_http_status(204)
+    end
+
+    context 'when no record exists' do
+      before { delete "/api/v1/commonplaces/#{commonplace_id + 100}" }
+
+      it 'returns 404' do
+        expect(response).to have_http_status(404)
+      end
+    end
+  end
 end

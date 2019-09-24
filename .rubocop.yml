@@ -17,6 +17,8 @@ Style/SymbolArray:
 
 Metrics/BlockLength:
   Max: 35
+  Exclude:
+    - 'spec/**/*'
 
 Style/NumericLiterals:
   Enabled: false

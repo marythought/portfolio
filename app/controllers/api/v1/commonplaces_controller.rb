@@ -16,24 +16,42 @@ module Api
             categories: c.category_names
           }
         end
-        render json: @commonplaces
+        render json: @commonplaces, status: :ok
       end
 
       def create
         commonplace = Commonplace.new(permitted_params.slice(:quote, :url, :source, :notes))
         commonplace.published_at = Time.now if publish
-        render json: commonplace if commonplace.save
+        if commonplace.save
+          render json: commonplace, status: :created
+        else
+          render json: {}, status: :bad_request
+        end
       end
 
       def destroy
-        Commonplace.destroy(params[:id])
+        commonplace = Commonplace.find(params[:id])
+        commonplace.categories.each(&:destroy)
+        if commonplace.destroy
+          render json: {}, status: :no_content
+        else
+          render json: {}, status: :bad_request
+        end
+      rescue ActiveRecord::RecordNotFound
+        render json: {}, status: :not_found
       end
 
       def update
         commonplace = Commonplace.find(params[:id])
         commonplace.published_at = Time.now if publish
         commonplace.update_attributes(permitted_params.slice(:quote, :url, :source, :notes))
-        render json: commonplace
+        if commonplace.save
+          render json: commonplace, status: :ok
+        else
+          render json: {}, status: :bad_request
+        end
+      rescue ActiveRecord::RecordNotFound
+        render json: {}, status: :not_found
       end
 
       private
