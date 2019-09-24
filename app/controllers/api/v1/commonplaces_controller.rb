@@ -4,7 +4,18 @@ module Api
       protect_from_forgery with: :null_session
 
       def index
-        @commonplaces = Commonplace.published.order(:created_at).reverse
+        commonplaces = Commonplace.published.includes(:categories).order(:created_at).reverse
+        @commonplaces = commonplaces.map do |c|
+          {
+            id: c.id,
+            source: c.source,
+            quote: c.quote,
+            notes: c.notes,
+            createdAt: c.created_at,
+            publishedAt: c.published_at,
+            categories: c.category_names
+          }
+        end
         render json: @commonplaces
       end
 

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { List } from 'semantic-ui-react';
 import Button from '../Button';
 import LinkedQuote from './LinkedQuote';
+import CategoriesList from './CategoriesList';
 
 export default class Commonplace extends React.Component {
   constructor(props) {
@@ -21,10 +22,11 @@ export default class Commonplace extends React.Component {
       const url = this.url.value;
       const quote = this.quote.value;
       const notes = this.notes.value;
-      const { id, created_at } = commonplace;
+      const { id } = commonplace;
+      const created_at = commonplace.createdAt;
       const publish = true;
       const newCommonplace = {
-        id, source, quote, url, notes, publish, created_at
+        id, source, quote, url, notes, publish, created_at,
       };
       handleUpdate(newCommonplace);
     }
@@ -68,6 +70,7 @@ export default class Commonplace extends React.Component {
           <List.Description>
             {commonplace.notes ? `Notes: ${commonplace.notes}` : ''}
           </List.Description>
+          <CategoriesList categories={commonplace.categories} />
         </List.Content>
         <Button admin={admin} onClick={() => this.handleEdit()} text="Edit" />
         <Button admin={admin} onClick={() => handleDelete(commonplace.id)} text="Delete" />
@@ -84,7 +87,8 @@ Commonplace.propTypes = {
     quote: PropTypes.string,
     notes: PropTypes.string,
     url: PropTypes.string,
-    created_at: PropTypes.string,
+    createdAt: PropTypes.string,
+    categories: PropTypes.arrayOf(PropTypes.string),
   }),
   handleDelete: PropTypes.func.isRequired,
   handleUpdate: PropTypes.func.isRequired,
@@ -98,6 +102,6 @@ Commonplace.defaultProps = {
     quote: '',
     notes: '',
     url: '',
-    created_at: '',
+    createdAt: '',
   },
 };
