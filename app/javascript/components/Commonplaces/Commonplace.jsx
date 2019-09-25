@@ -38,7 +38,6 @@ export default class Commonplace extends React.Component {
   render() {
     const { admin, commonplace, handleDelete } = this.props;
     const { editable } = this.state;
-
     if (editable) {
       return (
         <>
