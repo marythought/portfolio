@@ -11,6 +11,7 @@ module Api
             source: c.source,
             quote: c.quote,
             notes: c.notes,
+            url: c.url,
             createdAt: c.created_at,
             publishedAt: c.published_at,
             categories: c.category_names

@@ -17,18 +17,17 @@
 - rails assets:clobber
 - rails assets:precompile
 - heroku run rails db:migrate (if migrations)
+- heroku run rails console (if console needed)
 - git push heroku [$branch_name]:master
 
 ## TODOS
 
-- Beef up Tests
-  - [build a restful json api with rails 5 tutorial with rspec](https://scotch.io/tutorials/build-a-restful-json-api-with-rails-5-part-one)
-  - Jest tests for React
+- Integration tests
+- Jest tests for React
 - [set up heroku deploy script](https://mentalized.net/journal/2017/04/22/run-rails-migrations-on-heroku-deploy/)
 - Finish and add React commonplace book feature
   - V3: Categories
     - add indexes
-    - add categories to display
     - Admin can add existing categories
     - Admin can add a new category
     - Filter by categories
