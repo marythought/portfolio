@@ -7,8 +7,8 @@ const CategoriesList = (
 ) => {
   const { categories } = props;
   if (categories) {
-    const list = categories.map((category) => (
-      <List horizontal>
+    const list = categories.map((category, i) => (
+      <List horizontal key={i}>
         <List.Item>
           <List.Content>
             <List.Header as="a" className="pad-right">{category}</List.Header>

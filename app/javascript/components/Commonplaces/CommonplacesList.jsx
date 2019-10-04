@@ -9,12 +9,14 @@ const CommonplacesList = (props) => {
   } = props;
   if (commonplaces && commonplaces.length) {
     const list = commonplaces.map((commonplace) => (
-      <Commonplace
-        admin={admin}
-        commonplace={commonplace}
-        handleDelete={handleDelete}
-        handleUpdate={handleUpdate}
-      />
+      <React.Fragment key={commonplace.id}>
+        <Commonplace
+          admin={admin}
+          commonplace={commonplace}
+          handleDelete={handleDelete}
+          handleUpdate={handleUpdate}
+        />
+      </React.Fragment>
     ));
     return (
       <List className="very relaxed large">
