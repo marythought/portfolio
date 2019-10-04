@@ -22,12 +22,14 @@ export default class Commonplace extends React.Component {
       const url = this.url.value;
       const quote = this.quote.value;
       const notes = this.notes.value;
-      const { id } = commonplace;
-      const created_at = commonplace.createdAt;
+      const categories = this.categories.value;
       const publish = true;
+      /* eslint-disable camelcase */
+      const { created_at, id } = commonplace;
       const newCommonplace = {
-        id, source, quote, url, notes, publish, created_at,
+        id, source, quote, url, notes, categories, publish, created_at,
       };
+      /* eslint-enable camelcase */
       handleUpdate(newCommonplace);
     }
     this.setState({
@@ -50,6 +52,9 @@ export default class Commonplace extends React.Component {
         <br />
         Notes
         <input type="text" size="100" ref={(input) => { this.notes = input; }} defaultValue={commonplace.notes} />
+        <br />
+        Categories (separate with a semi-colon)
+        <input type="text" size="100" ref={(input) => { this.categories = input; }} defaultValue={commonplace.categories} />
         <br />
         {/* TODO: Add an admin checkbox for publish */}
         <Button admin={admin} onClick={() => this.handleEdit()} text="Submit" />
@@ -99,8 +104,8 @@ Commonplace.propTypes = {
     quote: PropTypes.string,
     notes: PropTypes.string,
     url: PropTypes.string,
-    createdAt: PropTypes.string,
-    categories: PropTypes.arrayOf(PropTypes.string),
+    created_at: PropTypes.string,
+    categories: PropTypes.string,
   }),
   handleDelete: PropTypes.func.isRequired,
   handleUpdate: PropTypes.func.isRequired,
@@ -114,6 +119,7 @@ Commonplace.defaultProps = {
     quote: '',
     notes: '',
     url: '',
-    createdAt: '',
+    created_at: '',
+    categories: '',
   },
 };

@@ -12,7 +12,7 @@ module Api
             quote: c.quote,
             notes: c.notes,
             url: c.url,
-            createdAt: c.created_at,
+            created_at: c.created_at,
             publishedAt: c.published_at,
             categories: c.category_names
           }
@@ -23,6 +23,7 @@ module Api
       def create
         commonplace = Commonplace.new(permitted_params.slice(:quote, :url, :source, :notes))
         commonplace.published_at = Time.now if publish
+        add_categories(commonplace)
         if commonplace.save
           render json: commonplace, status: :created
         else
@@ -46,6 +47,7 @@ module Api
         commonplace = Commonplace.find(params[:id])
         commonplace.published_at = Time.now if publish
         commonplace.update_attributes(permitted_params.slice(:quote, :url, :source, :notes))
+        update_categories(commonplace)
         if commonplace.save
           render json: commonplace, status: :ok
         else
@@ -58,11 +60,26 @@ module Api
       private
 
       def permitted_params
-        params.require(:commonplace).permit(:id, :quote, :url, :source, :notes, :publish)
+        params.require(:commonplace).permit(:id, :quote, :url, :source, :notes, :publish, :categories)
       end
 
       def publish
         permitted_params[:publish]
+      end
+
+      def add_categories(commonplace)
+        categories = permitted_params[:categories]&.split(';')
+        categories&.each do |name|
+          commonplace.add_category(name)
+        end
+      end
+
+      def update_categories(commonplace)
+        categories = permitted_params[:categories]&.split(';')
+        commonplace.categories.destroy_all
+        categories&.each do |name|
+          commonplace.add_category(name)
+        end
       end
     end
   end

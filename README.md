@@ -27,9 +27,6 @@
 - [set up heroku deploy script](https://mentalized.net/journal/2017/04/22/run-rails-migrations-on-heroku-deploy/)
 - Finish and add React commonplace book feature
   - V3: Categories
-    - add indexes
-    - Admin can add existing categories
-    - Admin can add a new category
     - Filter by categories
   - V4: Publishing
     - Guests can add links that are not published

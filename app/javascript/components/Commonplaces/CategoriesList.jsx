@@ -7,7 +7,8 @@ const CategoriesList = (
 ) => {
   const { categories } = props;
   if (categories) {
-    const list = categories.map((category, i) => (
+    const list = categories.split(';').map((category, i) => (
+      /* eslint-disable react/no-array-index-key */
       <List horizontal key={i}>
         <List.Item>
           <List.Content>
@@ -15,6 +16,7 @@ const CategoriesList = (
           </List.Content>
         </List.Item>
       </List>
+      /* eslint-enable react/no-array-index-key */
     ));
     return list;
   }
@@ -24,9 +26,9 @@ const CategoriesList = (
 export default CategoriesList;
 
 CategoriesList.propTypes = {
-  categories: PropTypes.arrayOf(PropTypes.string),
+  categories: PropTypes.string,
 };
 
 CategoriesList.defaultProps = {
-  categories: [],
+  categories: '',
 };
