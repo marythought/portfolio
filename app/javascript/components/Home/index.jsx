@@ -6,6 +6,11 @@ const Home = () => (
     <h1>Welcome</h1>
     <p>{text}</p>
     <ul>
+      <li>
+        A
+        <a href="http://www.marydickson.info/projects"> portfolio </a>
+        of technical projects and coding examples
+      </li>
       <li>Remote JavaScript, React (front-end); Rails and Go APIs (back-end)</li>
       <li>Responsive and accessible site design</li>
       <li>
