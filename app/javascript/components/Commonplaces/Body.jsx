@@ -33,6 +33,7 @@ export default class Body extends React.Component {
         url: formFields.url.value,
         notes: formFields.notes.value,
         quote: formFields.quote.value,
+        categories: formFields.categories.value,
         publish: admin,
       },
     });

@@ -14,4 +14,5 @@ test:
   username: portfolio
 
 production:
+  adapter: postgresql
   url: <%= ENV['DATABASE_URL'] %>

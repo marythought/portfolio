@@ -49,6 +49,7 @@ gem 'react-rails'
 gem 'webpacker'
 
 group :development, :test do
+  gem 'factory_bot_rails', '~> 4.0'
   gem 'faker'
   gem 'pry'
   gem 'rspec-rails'
@@ -71,7 +72,6 @@ end
 
 group :test do
   gem 'database_cleaner'
-  gem 'factory_bot_rails', '~> 4.0'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'simplecov'
 end

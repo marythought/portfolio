@@ -6,6 +6,11 @@ const Home = () => (
     <h1>Welcome</h1>
     <p>{text}</p>
     <ul>
+      <li>
+        A
+        <a href="http://www.marydickson.info/projects"> portfolio </a>
+        of technical projects and coding examples
+      </li>
       <li>Remote JavaScript, React (front-end); Rails and Go APIs (back-end)</li>
       <li>Responsive and accessible site design</li>
       <li>
@@ -14,7 +19,7 @@ const Home = () => (
       </li>
       <li>Rails Action Storage / AWS S3 integration</li>
       <li>Support for markdown view rendering</li>
-      <li>Rspec and CircleCI testing and deployment via Heroku</li>
+      <li>RSpec and CircleCI testing and deployment via Heroku</li>
     </ul>
     <p>
       Since first launching this site in 2015, I have upgraded it from Rails 4 to Rails 5.3.

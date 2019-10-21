@@ -37,6 +37,12 @@ const NewCommonplace = (props) => {
           <textarea rows="5" cols="50" ref={(input) => { formFields.notes = input; }} name="notes" value={values.notes} />
         </label>
         <br />
+        <label htmlFor="categories">
+          Categories: (separate multiple with semicolon)
+          <br />
+          <input size="50" ref={(input) => { formFields.categories = input; }} name="categories" value={values.categories} />
+        </label>
+        <br />
         <input type="submit" value="Submit" />
       </form>
     );

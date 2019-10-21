@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Commonplace.all.each { |c| c.categories.each { |cat| cat.destroy }}
+Commonplace.destroy_all
+Category.destroy_all
+
 categories = %w[tech kids food religion finance fashion]
 random_num_array = [0, 1, 2, 3]
 
@@ -14,8 +18,6 @@ categories.each do |cat|
     name: cat
   ).first_or_create!
 end
-
-Commonplace.destroy_all
 
 20.times do
   cp = Commonplace.create!(
@@ -27,7 +29,8 @@ Commonplace.destroy_all
   )
 
   random_num_array.sample.times do
-    cp.categories << Category.where(name: categories.sample)
+    cat = Category.where(name: categories.sample).first
+    cp.categories << cat unless cp.categories.include?(cat)
   end
 end
 
@@ -41,7 +44,8 @@ end
   )
 
   random_num_array.sample.times do
-    cp.categories << Category.where(name: categories.sample)
+    cat = Category.where(name: categories.sample).first
+    cp.categories << cat unless cp.categories.include?(cat)
   end
 end
 
